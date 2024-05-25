@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  nextjs:
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/nextjs/app
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
