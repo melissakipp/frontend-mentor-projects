@@ -148,7 +148,7 @@ const handleInputChange = (event: any) => {
 function Footer() {
   const frontendMentor = "https://www.frontendmentor.io?ref=challenge";
   const personalSite = "https://melissajkipp.com";
-  const github = "https://github.com/melissajkipp/base-apparel-coming-soon-page";
+  const githubPage = "https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md";
   return (
     <footer>
       <article>
@@ -162,7 +162,7 @@ function Footer() {
         <br />
         <section>
           <h3 className="sr-only">Project notes</h3>
-          <a href={github} target="_blank">GitHub Read me: Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span>
+          <a href={githubPage} target="_blank">GitHub Read me: Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span>
         </section>
       </article>
     </footer>

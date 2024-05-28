@@ -57,4 +57,5 @@ rm package-lock.json
 
 ### Goals
 - [ ]  [Base Apparel coming soon page](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
+  - Convert: Vanilla JavaScript to NextJS 14
 - [ ]  [Pod request access landing page](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG)
