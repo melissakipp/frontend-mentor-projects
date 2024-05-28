@@ -8,10 +8,11 @@ import IconError from '../../public/base-apparel-images/icon-error.svg';
 import Arrow from '../../public/base-apparel-images/icon-arrow.svg';
 import desktopImage from '../../public/base-apparel-images/hero-desktop.jpg';
 import mobileImage from '../../public/base-apparel-images/hero-mobile.jpg';
+import BackBanner from '../components/BackBanner';
 
 function Header() {
   return (
-    <header role="banner">
+    <header className='header' role="banner">
       <Image className="logo" src={Logo} alt="Base Apparel logo" />
     </header>
   );
@@ -22,7 +23,7 @@ function Aside() {
 
   useLayoutEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 600);
+      setIsMobile(window.innerWidth > 600);
     };
 
     window.addEventListener('resize', handleResize);
@@ -38,9 +39,9 @@ function Aside() {
     <aside className="hero">
       <h1 className="sr-only">Landing page</h1>
       {isMobile ? (
-        <Image className="hero-img" src={mobileImage} priority={true} alt={altText.alt} />
-      ) : (
         <Image className="hero-img" src={desktopImage} alt={altText.alt}  />
+      ) : (
+        <Image className="hero-img" src={mobileImage} priority={true} alt={altText.alt} />
       )}
     </aside>
   );
@@ -85,7 +86,7 @@ function Main() {
   };
 
   return (
-    <main className="view-port">
+    <main className="main">
     <article className="announcement">
       <h2 className="call-out">
         <span className="ann-one">We&rsquo;re</span><br />
@@ -175,11 +176,14 @@ function Footer() {
 
 export default function BaseApparel() {
   return (
+    <>
+    <BackBanner />
     <div className="container">
       <Header />
       <Aside />
       <Main />
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }

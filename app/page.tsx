@@ -11,16 +11,15 @@ export default function Home() {
         <h2>Newbie</h2>
         <ul>
           <li className={styles.card}>
-            <Image
-            src="/base-apparel-images/Screenshot-2024-05-27_first-draft.png"
-            alt=""
-            aria-hidden="true"
-            width={300}
-            height={300}
-            layout="responsive"
-            />
             <Link href="/base-apparel">
-              Base Apparel Coming Soon Page
+              <Image
+              src="/base-apparel-images/Screenshot-2024-05-27_first-draft.png"
+              alt=""
+              aria-hidden="true"
+              width={300}
+              height={300}
+              />
+                Base Apparel Coming Soon Page
             </Link>
           </li>
         </ul>

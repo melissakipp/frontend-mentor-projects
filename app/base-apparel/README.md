@@ -32,18 +32,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+**First Draft Solution**
+![](../../public/base-apparel-images/Screenshot-2024-05-27_first-draft.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel)
+- Live Site URL: [Add live site URL here](https://frontend-mentor-projects-rho.vercel.app/base-apparel)
 
 ## My process
 
@@ -54,17 +49,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- Accessibiliy standards
 - [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned how to handle responsive design challenges, improve accessibility using screen readers, and enhance form functionality with NextJS. Additionally, I gained a deeper understanding of the NextJS Image component and how to effectively manage project-specific metadata.
 
-To see how you can add code snippets, see below:
+Code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
