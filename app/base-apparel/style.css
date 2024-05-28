@@ -1,0 +1,279 @@
+:root {
+  --primary-font: "Josefin Sans", sans-serif;
+  --primary-font-style: normal;
+  --font-size: 16px;
+  --small-font-size: 14px;
+  --error-font-size: 13px;
+  --font-optical: auto;
+  --base-line-height: 1.5;
+  --base-font-weight: 400;
+  --thin-font-weight: 300;
+  --bold-font-weight: 600;
+
+  /* Colors */
+  --primary-color: hsl(0, 36%, 70%);
+  --primary-soft-red: hsl(0, 92%, 68%);
+  --primary-neutral-gray: hsl(0, 7%, 24%);
+
+  --light-gradient: linear-gradient(150deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 84.51%);
+  --medium-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --box-shadow-color: hsl(0,43%, 60%, 24.76%);
+  --border-color: hsl(0, 36%, 70%, 25%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+html {
+  font-family: var(--primary-font);
+  font-optical-sizing: var(--font-optical);
+  font-size: var(--font-size);
+  font-style: var(--primary-font-style);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--bold-font-weight);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+body {
+  background: var(--light-gradient)
+}
+
+header {
+  height: 10.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+}
+
+.call-out {
+  font-size: 2.5rem;
+  letter-spacing: 0.67rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.ann-one {
+  font-weight: var(--thin-font-weight);
+  color: var(--primary-color);
+}
+
+.ann-two {
+  font-weight: var(--bold-font-weight);
+  color: var(--primary-neutral-gray);
+}
+
+.message {
+  color: var(--primary-color);
+  font-size: var(--small-font-size);
+  line-height: 1.375;
+  margin: 1rem 0 2rem 0;
+}
+
+.form-layout {
+  margin: auto auto 2rem auto;
+  width: 100%;
+}
+
+.form-control {
+  border: none;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border: 1px solid var(--primary-color);
+  border-radius: 28px;
+  background-color: transparent;
+  padding: .75rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.input::placeholder {
+  color: var(--primary-color);
+  line-height: 200%;
+  opacity: 0.5;
+}
+
+form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0px 15px 20px 0px hsla(0, 44%, 60%, 0.25);
+  padding: 1rem;
+  width: 64px;
+  height: 48px;
+  right: 0px;
+}
+
+.arrow {
+  width: 18px;
+  height: 22px;
+}
+
+.error-icon, button {
+  position: absolute;
+}
+
+.error-icon {
+  right: 70px;
+}
+
+.error-message {
+  color: var(--primary-soft-red);
+  font-size: var(--error-font-size);
+  text-align: left;
+  margin: .25rem auto auto 1rem;
+}
+
+.error-icon,
+.error-message {
+  display: none;
+}
+
+.success-message {
+  background-color: white;
+  border-radius: 28px;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+footer {
+  height: 5.25rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--primary-neutral-gray);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--primary-soft-red);
+}
+
+@media (min-width: 600px) {
+
+  body {
+    background: no-repeat left/calc(70vw - 50px) url("./images/bg-pattern-desktop.svg");
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 7.5vh 1fr min-content;
+    grid-template-areas:
+      "header aside"
+      "main aside"
+      "footer footer";
+  }
+
+  header {
+    grid-area: header;
+    max-width: 445px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .view-port {
+    height: 100vh;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 445px;
+    margin: auto;
+  }
+
+  .announcement {
+    text-align: left;
+  }
+
+  .announcement h2 {
+    font-size: 4rem;
+  }
+
+
+  aside {
+    grid-area: aside;
+  }
+
+  input {
+    padding: .75rem;
+  }
+
+  form button {
+    width: 6rem;
+    height: 3rem;
+    padding: .75rem;
+  }
+
+  .icon {
+    right: 105px;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
