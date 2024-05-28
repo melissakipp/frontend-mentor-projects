@@ -1,14 +1,13 @@
 'use client';
 import Image from 'next/image'
-import type { Metadata } from "next";
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
-import './style.css';
-import Logo from './images/logo.svg';
-import IconError from './images/icon-error.svg';
-import Arrow from './images/icon-arrow.svg';
-import desktopImage from './images/hero-desktop.jpg';
-import mobileImage from './images/hero-mobile.jpg';
+import './base.css';
+import Logo from '../../public/base-apparel-images/logo.svg';
+import IconError from '../../public/base-apparel-images/icon-error.svg';
+import Arrow from '../../public/base-apparel-images/icon-arrow.svg';
+import desktopImage from '../../public/base-apparel-images/hero-desktop.jpg';
+import mobileImage from '../../public/base-apparel-images/hero-mobile.jpg';
 
 function Header() {
   return (
@@ -33,7 +32,7 @@ function Aside() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const altText = { alt: "Model wearing Base Apparel's black t-shirt" };
+  const altText = { alt: "Model wearing Base Apparel's organge t-shirt" };
 
   return (
     <aside className="hero">
@@ -67,23 +66,23 @@ function Main() {
   };
 
   const validateEmail = (email: any) => {
-  const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  return re.test(String(email).toLowerCase());
-};
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return re.test(String(email).toLowerCase());
+  };
 
-const handleSuccess = () => {
-  setIsSuccess(true);
-  setIsError(false);
-};
+  const handleSuccess = () => {
+    setIsSuccess(true);
+    setIsError(false);
+  };
 
-const handleError = () => {
-  setIsError(true);
-  setIsSuccess(false);
-};
+  const handleError = () => {
+    setIsError(true);
+    setIsSuccess(false);
+  };
 
-const handleInputChange = (event: any) => {
-  setEmailValue(event.target.value); // Update state on input change
-};
+  const handleInputChange = (event: any) => {
+    setEmailValue(event.target.value); // Update state on input change
+  };
 
   return (
     <main className="view-port">
@@ -146,23 +145,28 @@ const handleInputChange = (event: any) => {
 }
 
 function Footer() {
+
   const frontendMentor = "https://www.frontendmentor.io?ref=challenge";
   const personalSite = "https://melissajkipp.com";
   const githubPage = "https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md";
+  const projectReadme = "https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md";
+
   return (
     <footer>
       <article>
         <section>
           <h3 className="sr-only">Contact Information</h3>
           <p className="attribution">
-            Challenge by <a href={frontendMentor} target="_blank">Frontend Mentor</a> <span className="sr-only">open in a new tab</span>.
-            Coded by <a href={personalSite} target="_blank">Melissa Kipp</a> <span className="sr-only">open in a new tab</span>.
+            Challenge by <a href={frontendMentor} target="_blank">Frontend Mentor</a><span className="sr-only">open in a new tab</span>.
+            Coded by <a href={personalSite} target="_blank">Melissa Kipp</a><span className="sr-only">open in a new tab</span>.
           </p>
         </section>
         <br />
         <section>
           <h3 className="sr-only">Project notes</h3>
-          <a href={githubPage} target="_blank">GitHub Read me: Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span>
+          <p>
+            GitHub Read me: <a href={githubPage} target="_blank">Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span> and <a href={projectReadme} target="_blank">Project Readme</a><span className="sr-only">open in a new tab</span>.
+          </p>
         </section>
       </article>
     </footer>

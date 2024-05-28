@@ -1,5 +1,5 @@
 # Upskill Projects
-Commenting to 10 project by the end of 2024.
+committed to 10 project by the end of 2024.
 
 ## Current Versions:
 - NodeJS 21.7.3
@@ -11,7 +11,7 @@ Commenting to 10 project by the end of 2024.
 ### Run application without Docker
 Clone repo:
 ```bash
-git clone git@github.com:melissakipp/<>.git
+git clone git@github.com:melissakipp/frontend-mentor-projects.git
 ```
 Install Dependencies
 ```bash
@@ -56,6 +56,9 @@ rm package-lock.json
 
 
 ### Goals
-- [ ]  [Base Apparel coming soon page](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
+- [x]  [Base Apparel coming soon page](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
   - Convert: Vanilla JavaScript to NextJS 14
+  - Completed: 05/27/2024
+- [ ] [Product preview card component](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa/hub)
+- [ ] [Sunnyside agency landing page](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef/hub)
 - [ ]  [Pod request access landing page](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG)
