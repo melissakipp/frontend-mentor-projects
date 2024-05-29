@@ -1,4 +1,17 @@
-.homePage h1 {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.homePage {
+  font-family: "Roboto", sans-serif;;
+}
+
+.cardImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.homePage .pageTitle {
   font-size: 3rem;
   margin: 2rem;
   text-align: center;
@@ -10,29 +23,31 @@
   padding: 2rem;
 }
 
-.challenges h2 {
+.title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: auto auto 2.5rem auto;
 }
 
-.challenges ul {
+.cardList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.challenges .card {
+.card {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.challenges .card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+ .cardTitle {
+  font-size: 1.15rem;
+  margin: auto auto 1rem auto;
+  letter-spacing: 1px;
 }
 
-.challenges .card:hover {
+.card:hover {
   background-color: #f9f9f9;
 }

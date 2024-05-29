@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image'
+import Image from 'next/image';
 import { useState, useLayoutEffect } from 'react';
 
 import './base.css';
