@@ -1,6 +1,6 @@
 # Frontend Mentor - Product preview card component solution
 
-Welcome to the Product Preview Card Component project! This repository contains a solution to a Frontend Mentor challenge focused on creating a responsive and accessible product preview card using modern HTML and CSS techniques. Explore the code to see how design and development consistency is maintained throughout the project.
+Welcome to the Product Preview Card Component project! This repository contains a [solution ](https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY) to a Frontend Mentor challenge focused on creating a responsive and accessible product preview card using modern HTML and CSS techniques. Explore the code to see how design and development consistency is maintained throughout the project.
 
 ## Table of contents
 

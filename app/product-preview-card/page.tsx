@@ -59,14 +59,14 @@ function Footer() {
         <section>
           <h3 className="sr-only">Contact Information</h3>
           <p className="attribution">
-            Challenge by <a href="#" target="_blank">Frontend Mentor</a> <span className="sr-only">open in a new tab</span>.
+            Challenge by <a href="https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY" target="_blank">Frontend Mentor</a> <span className="sr-only">open in a new tab</span>.
             Coded by <a href="https://melissajkipp.com" target="_blank">Melissa Kipp</a> <span className="sr-only">open in a new tab</span>.
           </p>
         </section>
         <br />
         <section>
           <h3 className="sr-only">Project notes</h3>
-          <a href="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md" target="_blank">Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span> and <a href="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md" target="_blank">Project Readme</a><span className="sr-only">open in a new tab</span>.
+          <a href="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/product-preview-card/notes.md" target="_blank">Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span> and <a href="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/product-preview-card/README.md" target="_blank">Project Readme</a><span className="sr-only">open in a new tab</span>.
         </section>
       </article>
     </footer>
