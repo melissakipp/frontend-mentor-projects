@@ -35,6 +35,21 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+footer {
+  height: 5.25rem;
+  text-align: center;
+  margin: 4rem auto auto auto;
+}
+
+footer a {
+  color: var(--primary-neutral-gray);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--primary-soft-red);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

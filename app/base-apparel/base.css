@@ -176,21 +176,6 @@ form button {
   margin: 2rem auto;
 }
 
-footer {
-  height: 5.25rem;
-  text-align: center;
-  margin: 4rem auto auto auto;
-}
-
-footer a {
-  color: var(--primary-neutral-gray);
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: var(--primary-soft-red);
-}
-
 @media (min-width: 600px) {
 
   .container {
