@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
-import cardImage from "../public/base-apparel-images/Screenshot-2024-05-27_first-draft.png";
+import cardImage from "../public/base-apparel-images/screenshot_desktop.png";
 import cardImagePPC from "../public/product-preview-images/screenshot_desktop-solution.png";
 
 export default function Home() {
@@ -18,10 +18,13 @@ export default function Home() {
                 Base Apparel Coming Soon Page
               </h3>
               <Image
-              className={styles.cardImg}
-              src={cardImage}
-              alt=""
-              aria-hidden="true"
+                className={styles.cardImg}
+                src={cardImage}
+                alt=""
+                aria-hidden="true"
+                width={300}
+                height={300}
+                loading="lazy"
               />
             </Link>
           </li>
@@ -31,10 +34,13 @@ export default function Home() {
                 Product Preview Card
               </h3>
               <Image
-              className={styles.cardImg}
-              src={cardImagePPC}
-              alt=""
-              aria-hidden="true"
+                className={styles.cardImg}
+                src={cardImagePPC}
+                alt=""
+                aria-hidden="true"
+                width={300}
+                height={300}
+                loading="lazy"
               />
             </Link>
           </li>

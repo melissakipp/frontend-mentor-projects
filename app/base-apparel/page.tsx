@@ -19,30 +19,21 @@ function Header() {
 }
 
 function Aside() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth > 600);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize(); // Call on initial render
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const altText = { alt: "Model wearing Base Apparel's organge t-shirt" };
 
   return (
     <aside className="hero">
       <h1 className="sr-only">Landing page</h1>
-      {isMobile ? (
-        <Image className="hero-img" src={desktopImage} alt={altText.alt}  />
-      ) : (
-        <Image className="hero-img" src={mobileImage} priority={true} alt={altText.alt} />
-      )}
+      <div style={{position: 'relative',  height: '600px', width: '100%'}}>
+        <picture>
+          <Image
+            className="hero-img"
+            src={desktopImage}
+            alt=""
+            aria-hidden="true"
+            fill
+          />
+        </picture>
+      </div>
     </aside>
   );
 }
