@@ -9,44 +9,43 @@ export default function Home() {
     <main className={styles.homePage}>
       <article>
       <h1 className={styles.pageTitle}>Frontend Mentor</h1>
-      <section className={styles.challenges}>
-        <h2 className={styles.title} >Newbie</h2>
-        <ul className={styles.cardList}>
-          <li className={styles.card}>
-            <Link href="/base-apparel">
-              <h3 className={styles.cardTitle}>
-                Base Apparel Coming Soon Page
-              </h3>
-              <Image
-                className={styles.cardImg}
-                src={cardImage}
-                alt=""
-                aria-hidden="true"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
-            </Link>
-          </li>
-          <li className={styles.card}>
-            <Link href="/product-preview-card">
-              <h3 className={styles.cardTitle}>
-                Product Preview Card
-              </h3>
-              <Image
-                className={styles.cardImg}
-                src={cardImagePPC}
-                alt=""
-                aria-hidden="true"
-                width={300}
-                height={300}
-                loading="lazy"
-              />
-            </Link>
-          </li>
-        </ul>
-      </section>
-
+        <section className={styles.challenges}>
+          <h2 className={styles.title} >Newbie</h2>
+          <ul className={styles.cardList}>
+            <li className={styles.card}>
+              <Link href="/base-apparel">
+                <h3 className={styles.cardTitle}>
+                  Base Apparel Coming Soon Page
+                </h3>
+                <Image
+                  className={styles.cardImg}
+                  src={cardImage}
+                  alt=""
+                  aria-hidden="true"
+                  width={300}
+                  height={300}
+                  loading="lazy"
+                />
+              </Link>
+            </li>
+            <li className={styles.card}>
+              <Link href="/product-preview-card">
+                <h3 className={styles.cardTitle}>
+                  Product Preview Card
+                </h3>
+                <Image
+                  className={styles.cardImg}
+                  src={cardImagePPC}
+                  alt=""
+                  aria-hidden="true"
+                  width={300}
+                  height={300}
+                  loading="lazy"
+                />
+              </Link>
+            </li>
+          </ul>
+        </section>
       </article>
     </main>
   );

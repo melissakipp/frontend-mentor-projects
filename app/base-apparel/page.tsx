@@ -1,14 +1,13 @@
 'use client';
 import Image from 'next/image';
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 
 import './base.css';
 import Logo from '../../public/base-apparel-images/logo.svg';
 import IconError from '../../public/base-apparel-images/icon-error.svg';
 import Arrow from '../../public/base-apparel-images/icon-arrow.svg';
-import desktopImage from '../../public/base-apparel-images/hero-desktop.jpg';
-import mobileImage from '../../public/base-apparel-images/hero-mobile.jpg';
-import BackBanner from '../components/BackBanner';
+import desktopImage from '../../public/base-apparel-images/hero-desktop.jpg';import BackBanner from '../components/BackBanner';
+import PersonalFooter from '../components/PersonalFooter';
 
 function Header() {
   return (
@@ -136,35 +135,6 @@ function Main() {
   );
 }
 
-function Footer() {
-
-  const frontendMentor = "https://www.frontendmentor.io?ref=challenge";
-  const personalSite = "https://melissajkipp.com";
-  const githubPage = "https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md";
-  const projectReadme = "https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md";
-
-  return (
-    <footer>
-      <article>
-        <section>
-          <h3 className="sr-only">Contact Information</h3>
-          <p className="attribution">
-            Challenge by <a href={frontendMentor} target="_blank">Frontend Mentor</a><span className="sr-only">open in a new tab</span>.
-            Coded by <a href={personalSite} target="_blank">Melissa Kipp</a><span className="sr-only">open in a new tab</span>.
-          </p>
-        </section>
-        <br />
-        <section>
-          <h3 className="sr-only">Project notes</h3>
-          <p>
-            GitHub Read me: <a href={githubPage} target="_blank">Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span> and <a href={projectReadme} target="_blank">Project Readme</a><span className="sr-only">open in a new tab</span>.
-          </p>
-        </section>
-      </article>
-    </footer>
-  )
-}
-
 export default function BaseApparel() {
   return (
     <>
@@ -174,7 +144,13 @@ export default function BaseApparel() {
       <Aside />
       <Main />
     </div>
-    <Footer />
+    <footer>
+      <PersonalFooter
+        mySolution="https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-1EhXUnKW7h"
+        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md"
+        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md"
+      />
+    </footer>
     </>
   );
 }

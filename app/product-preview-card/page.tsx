@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import './product.css';
+import PersonalFooter from '../components/PersonalFooter';
 
 import PPCDesktop from '../../public/product-preview-images/image-product-desktop.jpg';
 import PPCMobile from '../../public/product-preview-images/image-product-mobile.jpg';
@@ -52,26 +53,7 @@ function ProductCardPreview() {
   );
 }
 
-function Footer() {
-  return (
-    <footer>
-      <article>
-        <section>
-          <h3 className="sr-only">Contact Information</h3>
-          <p className="attribution">
-            Challenge by <a href="https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY" target="_blank">Frontend Mentor</a> <span className="sr-only">open in a new tab</span>.
-            Coded by <a href="https://melissajkipp.com" target="_blank">Melissa Kipp</a> <span className="sr-only">open in a new tab</span>.
-          </p>
-        </section>
-        <br />
-        <section>
-          <h3 className="sr-only">Project notes</h3>
-          <a href="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/product-preview-card/notes.md" target="_blank">Takeaways and thoughts</a> <span className="sr-only">open in a new tab</span> and <a href="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/product-preview-card/README.md" target="_blank">Project Readme</a><span className="sr-only">open in a new tab</span>.
-        </section>
-      </article>
-    </footer>
-  );
-}
+
 
 export default function ProductPreviewCard() {
   return (
@@ -80,7 +62,13 @@ export default function ProductPreviewCard() {
     <main className="main__content">
       <ProductCardPreview />
     </main>
-    <Footer />
+    <footer>
+      <PersonalFooter
+        mySolution="https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY"
+        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/product-preview-card/notes.md"
+        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/product-preview-card/README.md"
+      />
+    </footer>
     </>
 
   );
