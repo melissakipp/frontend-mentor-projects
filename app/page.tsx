@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { HiCode } from 'react-icons/hi';
 interface Project {
   id: string;
   title: string;
@@ -34,6 +36,10 @@ const projects: Project[] = [
 ];
 
 export default function Home() {
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -66,9 +72,33 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <p>
-          Created by Melissa Kipp &copy; {new Date().getFullYear()}
-        </p>
+        <div className={styles.footerContent}>
+          <div className={styles.footerLogo}>
+            <HiCode className={styles.codeIcon} />
+            <h3>Melissa Kipp</h3>
+          </div>
+          
+          <div className={styles.footerSocial}>
+            <a href="https://github.com/melissakipp" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub className={styles.socialIcon} />
+            </a>
+            <a href="https://linkedin.com/in/melissajkipp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin className={styles.socialIcon} />
+            </a>
+            <a href="https://twitter.com/_melissakipp" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter className={styles.socialIcon} />
+            </a>
+          </div>
+        </div>
+        
+        <div className={styles.footerBottom}>
+          <p>
+            &copy; {getCurrentYear()} Melissa Kipp. All rights reserved.
+          </p>
+          <p className={styles.footerTagline}>
+            Crafting beautiful web experiences with <span className={styles.accentText}>passion</span> and <span className={styles.accentText}>code</span>
+          </p>
+        </div>
       </footer>
     </div>
   );
