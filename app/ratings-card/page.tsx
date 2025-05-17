@@ -9,7 +9,6 @@ export default function RatingsCardPage() {
     console.log(`Rating submitted: ${rating}`);
     // You could add analytics tracking here
   };
-
   return (
     <>
     <BackBanner />
