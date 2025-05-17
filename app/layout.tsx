@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
+import { Overpass } from 'next/font/google';
 import "./globals.css";
+
+// Load and configure the Overpass font
+const overpass = Overpass({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Melissa Kipp | Frontend Challenges",
+    default: "Melissa Kipp | Frontend Mentor Challenges",
     template: "Melissa Kipp | %s",
   },
-  description: "Frontend Mentor Challenge by Melissa Kipp",
+  description: "A collection of Frontend Mentor challenges implemented with Next.js by Melissa Kipp",
 };
 
 export default function RootLayout({
@@ -16,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={overpass.className}>{children}</body>
     </html>
   );
 }

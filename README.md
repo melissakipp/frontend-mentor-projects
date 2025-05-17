@@ -1,64 +1,58 @@
-# Upskill Projects
-committed to 10 project by the end of 2024.
+- Node.js (v16.8.0 or higher)
+- npm or yarn
 
-## Current Versions:
-- NodeJS 21.7.3
-- NPM 10.8.0
-- NextJS 14.2.3
-- TypeScript 5.0.2
+### Installation
 
-## Getting Started: Web Application Developement Environment
-### Run application without Docker
-Clone repo:
-```bash
-git clone git@github.com:melissakipp/frontend-mentor-projects.git
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/frontend-mentor-repo.git
+   cd frontend-mentor-repo
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📂 Project Structure
+
+Each challenge is contained in its own folder under the `/app` directory:
+
 ```
-Install Dependencies
-```bash
-npm install
-```
-
-First, run the development server:
-
-```bash
-npm run dev
-```
-
-Next run the NPM command:
-```bash
-npm install
-```
-DO NOT RUN THE DEV SERVER - Run for the first time
-```bash
-docker compose up --build
-```
-
-After this you will use the following commands to manage the development environment:
-
-**To start the container**
-```bash
-docker compose up
-```
-
-OR using -d flag will run the container in the background (no output)
-```bash
-docker compose up -d
+/app
+  ├── /[challenge-name]
+  │   ├── page.tsx            # Main page component
+  │   ├── page.module.css     # Page styles
+  │   ├── /components         # Challenge-specific components
+  │   ├── README.md           # Challenge documentation
+  │   └── notes.md            # Personal notes and learnings
 ```
 
-### Docker Container (Troubleshooting)
-```bash
-rm -rf .next node_modules
-rm package-lock.json
-```
+## 📝 License
 
-### Go to your browser
-```http://localhost:3000/```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 👤 Author
 
-### Goals
-- [x]  [Base Apparel coming soon page](https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0)
-  - Convert: Vanilla JavaScript to NextJS 14
-  - Completed: 05/27/2024
-- [ ] [Product preview card component](https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa/hub)
-- [ ] [Sunnyside agency landing page](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef/hub)
-- [ ]  [Pod request access landing page](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG)
+- Website - [Your Name](https://your-website.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://twitter.com/yourusername)
+
+## 🙏 Acknowledgments
+
+- [Frontend Mentor](https://www.frontendmentor.io/) for providing the challenges
+- The Frontend Mentor community for feedback and support

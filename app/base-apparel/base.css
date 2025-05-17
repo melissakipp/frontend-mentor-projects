@@ -1,57 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-:root {
-  
-  --primary-font: "Josefin Sans", sans-serif;
-  --primary-font-style: normal;
-  --font-size: 16px;
-  --small-font-size: 14px;
-  --error-font-size: 13px;
-  --font-optical: auto;
-  --base-line-height: 1.5;
-  --base-font-weight: 400;
-  --thin-font-weight: 300;
-  --bold-font-weight: 600;
-
-  /* Colors */
-  --primary-color: hsl(0, 36%, 70%);
-  --primary-soft-red: hsl(0, 92%, 68%);
-  --primary-neutral-gray: hsl(0, 7%, 24%);
-
-  --light-gradient: linear-gradient(150deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 84.51%);
-  --medium-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-  --box-shadow-color: hsl(0,43%, 60%, 24.76%);
-  --border-color: hsl(0, 36%, 70%, 25%);
-}
-
-
-
 input,
 button {
   font: inherit;
 }
 
 html {
-  font-family: var(--primary-font);
-  font-optical-sizing: var(--font-optical);
-  font-size: var(--font-size);
-  font-style: var(--primary-font-style);
-  font-weight: var(--base-font-weight);
-  line-height: var(--base-line-height);
+  font-family: var(--ba-primary-font);
+  font-optical-sizing: var(--ba-font-optical);
+  font-size: var(--ba-font-size);
+  font-style: var(--ba-primary-font-style);
+  font-weight: var(--ba-base-font-weight);
+  line-height: var(--ba-base-line-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--bold-font-weight);
+  font-weight: var(--ba-bold-font-weight);
 }
 
-/* img {
-  width: 100%;
-  height: auto;
-} */
-
-
 body {
-  background: var(--light-gradient)
+  background: var(--ba-light-gradient)
 }
 
 header {
@@ -83,18 +51,18 @@ header {
 }
 
 .ann-one {
-  font-weight: var(--thin-font-weight);
-  color: var(--primary-color);
+  font-weight: var(--ba-thin-font-weight);
+  color: var(--ba-primary-color);
 }
 
 .ann-two {
-  font-weight: var(--bold-font-weight);
-  color: var(--primary-neutral-gray);
+  font-weight: var(--ba-bold-font-weight);
+  color: var(--ba-primary-neutral-gray);
 }
 
 .message {
-  color: var(--primary-color);
-  font-size: var(--small-font-size);
+  color: var(--ba-primary-color);
+  font-size: var(--ba-small-font-size);
   line-height: 1.375;
   margin: 1rem 0 2rem 0;
 }
@@ -113,7 +81,7 @@ header {
 }
 
 .input {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--ba-primary-color);
   border-radius: 28px;
   background-color: transparent;
   padding: .75rem;
@@ -122,7 +90,7 @@ header {
 }
 
 .input::placeholder {
-  color: var(--primary-color);
+  color: var(--ba-primary-color);
   line-height: 200%;
   opacity: 0.5;
 }
@@ -132,7 +100,7 @@ form button {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--ba-border-color);
   border-radius: 28px;
   cursor: pointer;
   box-shadow: 0px 15px 20px 0px hsla(0, 44%, 60%, 0.25);
@@ -156,8 +124,8 @@ form button {
 }
 
 .error-message {
-  color: var(--primary-soft-red);
-  font-size: var(--error-font-size);
+  color: var(--ba-primary-soft-red);
+  font-size: var(--ba-error-font-size);
   text-align: left;
   margin: .25rem auto auto 1rem;
 }
@@ -170,16 +138,16 @@ form button {
 .success-message {
   background-color: white;
   border-radius: 28px;
-  font-size: 2rem;
+  box-shadow: var(--ba-box-shadow-color) 0px 5px 15px;
+  font-size: 1rem;
   font-weight: 900;
-  padding: 1rem;
+  padding: 2rem;
   margin: 2rem auto;
 }
 
 @media (min-width: 600px) {
 
   .container {
-    background: no-repeat left/calc(70vw - 50px) url("../../public/base-apparel-images/bg-pattern-desktop.svg");
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 7.5vh 2fr ;

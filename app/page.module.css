@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.homePage {
+/* .homePage {
   font-family: "Roboto", sans-serif;;
 }
 
@@ -61,5 +61,105 @@
 @media (min-width: 600px) {
   .cardList {
     grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: var(--pb-primary);
+  color: var(--pb-white);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: var(--pb-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.projectCard {
+  background-color: var(--pb-white);
+  border-radius: var(--border-radius-card);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--pb-black);
+  transition: transform var(--transition-standard), box-shadow var(--transition-standard);
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.cardImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #0f0f0f;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .projectGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
   }
 }

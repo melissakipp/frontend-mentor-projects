@@ -3,10 +3,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import './base.css';
-import Logo from '../../public/base-apparel-images/logo.svg';
-import IconError from '../../public/base-apparel-images/icon-error.svg';
-import Arrow from '../../public/base-apparel-images/icon-arrow.svg';
-import desktopImage from '../../public/base-apparel-images/hero-desktop.jpg';import BackBanner from '../components/BackBanner';
+import Logo from '../../public/images/base-apparel/logo.svg';
+import IconError from '../../public/images/base-apparel/icon-error.svg';
+import Arrow from '../../public/images/base-apparel/icon-arrow.svg';
+import desktopImage from '../../public/images/base-apparel/hero-desktop.jpg';
+import BackBanner from '../components/BackBanner';
 import PersonalFooter from '../components/PersonalFooter';
 
 function Header() {
@@ -125,7 +126,7 @@ function Main() {
         )}
         {isSuccess && (
           <div className="success-message">
-            <h2>Thank you!</h2>
+            <h3>Thank you!</h3>
             <p>You&rsquo;re subscribed. Look out for our content!</p>
           </div>
         )}

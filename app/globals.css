@@ -1,3 +1,48 @@
+/* CSS Variables for theming */
+:root {
+  /* Personal Branding */
+  --pb-primary: #81498A;
+  --pb-secondary: #E1CDE5;
+  --pb-accent: #6DC9BF;
+  --pb-white: #F9F9F9;
+  --pb-black: #3E3E3E;
+  --pb-gray: #747474;
+
+  /* Base Apparel */
+  --ba-primary-font: "Josefin Sans", sans-serif;
+  --ba-primary-font-style: normal;
+  --ba-font-size: 16px;
+  --ba-small-font-size: 14px;
+  --ba-error-font-size: 13px;
+  --ba-font-optical: auto;
+  --ba-base-line-height: 1.5;
+  --ba-base-font-weight: 400;
+  --ba-thin-font-weight: 300;
+  --ba-bold-font-weight: 600;
+  --ba-primary-color: hsl(0, 36%, 70%);
+  --ba-primary-soft-red: hsl(0, 92%, 68%);
+  --ba-primary-neutral-gray: hsl(0, 7%, 24%);
+  --ba-light-gradient: linear-gradient(150deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 84.51%);
+  --ba-medium-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --ba-box-shadow-color: hsl(0,43%, 60%, 24.76%);
+  --ba-border-color: hsl(0, 36%, 70%, 25%);
+
+/* Ratings Card */
+  --color-background: #131518;
+  --color-text: #131518;
+  --color-white: #ffffff;
+  --color-card-gradient-start: #232a34;
+  --color-card-gradient-end: #181e27;
+  --color-button: #262e38;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #969fad;
+  --color-primary: #fc7614;
+  --font-family: 'Overpass', sans-serif;
+  --border-radius-card: 1rem;
+  --border-radius-button: 1.4rem;
+  --transition-standard: 0.2s ease-in-out;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,12 +1,12 @@
+'use client';
 import Image from 'next/image';
-import './product.css';
-import PersonalFooter from '../components/PersonalFooter';
-
-import PPCDesktop from '../../public/product-preview-images/image-product-desktop.jpg';
-import PPCMobile from '../../public/product-preview-images/image-product-mobile.jpg';
-import shoppingCart from '../../public/product-preview-images/icon-cart.svg';
-
 import BackBanner from '../components/BackBanner';
+import PersonalFooter from '../components/PersonalFooter';
+import './product.css';
+
+import PPCDesktop from '../../public/images/product-preview/image-product-desktop.jpg';
+import PPCMobile from '../../public/images/product-preview/image-product-mobile.jpg';
+import shoppingCart from '../../public/images/product-preview/icon-cart.svg';
 
 function ProductCardPreview() {
   return (
@@ -17,7 +17,7 @@ function ProductCardPreview() {
           <source srcSet={PPCMobile.src} media="(max-width: 599px)" />
           <Image
             className="img"
-            src={PPCDesktop.src}
+            src={PPCDesktop}
             alt="Gabrielle Essense perfume bottle laying flat on a table with green leaves above and below it"
             width={600}
             height={600}
