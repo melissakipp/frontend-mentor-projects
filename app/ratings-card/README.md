@@ -29,13 +29,13 @@ Users should be able to:
 
 ### Screenshots
 
-![Rating state](./screenshots/rating-state.png)
-![Thank you state](./screenshots/thank-you-state.png)
+![Rating state](../../public/images/ratings-card/icon-star.svg)
+![Thank you state](../../public/images/ratings-card/thank-you-state.png)
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/your-username/frontend-mentor-repo)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Solution URL: [GitHub Repository](https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/ratings-card)
+- Live Site URL: [Live Demo](https://frontend-mentor-projects-rho.vercel.app/)
 
 ## My process
 
@@ -85,9 +85,9 @@ I want to continue focusing on:
 
 ## Author
 
-- Website - [Your Name](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Your Name](https://www.melissajkipp.com/)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/melissakipp)
+- Twitter - [@yourusername](https://x.com/_melissakipp)
 
 ## Acknowledgments
 
