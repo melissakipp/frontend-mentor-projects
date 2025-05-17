@@ -8,7 +8,6 @@ interface Project {
   image: string;
   path: string;
 }
-
 // Project card data
 const projects: Project[] = [
   {

@@ -1,5 +1,4 @@
 'use client';
-
 import BackBanner from '../components/BackBanner';
 import PersonalFooter from '../components/PersonalFooter';
 import RatingCard from './components/RatingCard';
