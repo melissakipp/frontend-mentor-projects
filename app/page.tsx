@@ -32,6 +32,13 @@ const projects: Project[] = [
     description: 'User feedback component with rating selection',
     image: '/images/ratings-card/rating-card-preview.png',
     path: '/ratings-card'
+  },
+  {
+    id: 'dropdown-nav',
+    title: 'Intro section with dropdown navigation',
+    description: 'Responsive with accessible dropdown and frontend interaction testing',
+    image: '/images/dropdown-nav/dropdown-nav-preview.png',
+    path: '/dropdown-nav'
   }
 ];
 
