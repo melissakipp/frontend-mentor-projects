@@ -41,6 +41,20 @@
   --border-radius-card: 1rem;
   --border-radius-button: 1.4rem;
   --transition-standard: 0.2s ease-in-out;
+
+  /* Dropdown Navigation */
+  --rw-pure-white: hsl(0, 0%, 100%);
+  --rw-white: hsl(0, 0%, 98%);
+  --rw-gray: hsl(0, 0%, 41%);
+  --rw-black: hsl(0, 0%, 8%);
+  --rw-font-family: 'Epilogue', sans-serif;
+  --rw-font-size: 18px; /* Base font size */
+  --rw-regular-weight: 500;
+  --rw-bold-weight: 700;
+  --rw-color-primary: hsl(0, 0%, 8%);
+  --rw-color-text: hsl(0, 0%, 41%);
+  --rw-color-background: hsl(0, 0%, 98%);
+  --rw-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .sr-only {

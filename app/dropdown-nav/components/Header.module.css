@@ -1,0 +1,285 @@
+.header {
+  margin: 2rem;
+}
+
+/* ==========================================================================
+  Navigation - Base
+   ========================================================================== */
+/* Nav mobile layout */
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+.logo {
+  z-index: 20;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.register:hover, .register:focus {
+  border-color: var(--rw-black);
+}
+
+.button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  border: 2px solid var(--rw-black);
+  font-weight: var(--rw-bold-weight);
+}
+
+.btn--primary {
+  background: var(--rw-black);
+  color: var(--rw-white);
+}
+
+.btn--primary:hover {
+  background: transparent;
+  color: var(--rw-black);
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 40%;
+  margin: auto 1rem;
+}
+
+/* Dropdown styles */
+.dropdown-toggle {
+  position: relative;
+  padding-right: 1rem;
+}
+
+.icon-arrow {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"] .icon-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  list-style: none;
+}
+
+.dropdown-menu.active {
+  display: block;
+  padding: 2rem;
+}
+
+.dropdown-menu .dropdown-item {
+  margin-bottom: 1rem;
+}
+
+.dropdown-menu.active .dropdown-item  {
+  margin-bottom: 1rem;
+}
+
+.dropdown-menu .dropdown-item :last-child {
+  margin-bottom: 0;
+}
+
+.menu-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dropdown-icon {
+  width: 1rem;
+  height: 1rem; 
+}
+
+/* ==========================================================================
+   5. Navigation - Mobile First Base Styles
+   ========================================================================== */
+/* These styles apply to all screen sizes by default (mobile first) */
+.menu-toggle {
+  display: block;
+  position: relative;
+  z-index: 110;
+  margin-right: 1rem;
+}
+
+.icon-close {
+  display: none;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+.nav-overlay.active {
+  display: block;
+}
+
+/* Mobile navigation styles (default) */
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: var(--rw-pure-white);
+  z-index: 100;
+  padding: 4rem 1.11rem 1.33rem 1.11rem;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.nav-wrapper.active {
+  right: 0;
+}
+
+.nav-links {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2.5rem; /* Increased space after the logo/hamburger */
+  padding-left: 0; 
+}
+
+.nav-links .nav-links-item {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.dropdown-menu {
+  position: static;
+  box-shadow: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  display: none;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.nav-auth {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn--wide {
+  text-align: center;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+/* Toggle menu button states */
+.menu-toggle[aria-expanded="true"] .icon-menu {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
+/* Navigation - Desktop Styles (Single Consistent Breakpoint) */
+@media (min-width: 1200px) {
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Reset nav wrapper to horizontal layout */
+  .nav-wrapper {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    right: 0;
+    overflow-y: visible;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items:self-start;
+    margin: 0;
+    margin-left: 4rem;
+    width: auto;
+  }
+  
+  .nav-links .nav-links-item {
+    position: relative;
+    margin: 0 1rem 0 0;
+    width: auto;
+  }
+  
+  .nav-auth {
+    flex-direction: row;
+    margin: 0;
+    margin-left: auto;
+    width: auto;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: var(--rw-shadow);
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    min-width: 160px;
+  }
+  
+  /* Stop body from having overflow hidden if desktop */
+  .container.menu-open {
+    overflow: visible;
+  }
+}

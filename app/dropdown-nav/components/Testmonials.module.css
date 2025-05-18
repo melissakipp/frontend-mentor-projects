@@ -1,0 +1,95 @@
+/* ==========================================================================
+  6. Testimonials Layout
+   ========================================================================== */
+
+.testmonials {
+  margin: 2rem 0;
+}
+
+.testimonials-list {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1.5rem; 
+}
+
+.testimonial-item {
+  padding: 0;
+  margin: 0;
+}
+
+.testimonial-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect */
+.testimonial-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .testimonials-list {
+    justify-content: center; 
+    gap: 2rem; /* Increased gap for better touch targets */
+  }
+  
+  .testimonial-image {
+    max-width: 80px; 
+  }
+}
+
+/* Desktop layout (two columns) */
+@media (min-width: 1024px) {
+  /* Position testimonials at the bottom of the left column */
+  .testmonials {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    margin-top: auto; 
+    align-self: end;
+  }
+  
+  .testimonial-image {
+    max-height: 2rem;
+  }
+}
+
+/* Adjust layout for extra-large screens */
+@media (min-width: 1200px) {
+  .testmonials {
+    margin-top: 4rem;
+  }
+}
+
+.testmonials {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.testimonial-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.testimonial-item {
+  flex: 0 1 auto;
+}
+
+.testimonial-image {
+  max-height: 1.5rem;
+  width: auto;
+}

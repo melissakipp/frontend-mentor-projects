@@ -1,0 +1,141 @@
+/* ==========================================================================
+  Main container layout
+   ========================================================================== */
+/* Mobile-first layout (one column) */
+.main {
+  box-sizing: border-box;
+  flex: 1; /* This makes the main content take up available space */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Fix for the "Learn more" link container 
+.finalSpacing*/
+/* .main > div:last-of-type {
+  margin-bottom: 3rem; 
+} */
+
+/* Hero section with image */
+.hero {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-text__title {
+  font-size: 2.25rem;
+  font-weight: var(--rw-bold-weight);
+  margin: 0;
+}
+
+/* Text content section */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.main p {
+  color: var(--rw-gray);
+  margin: 0;
+  max-width: 40ch;
+}
+
+.cta {
+  display: inline-block;
+  background-color: var(--rw-black);
+  color: var(--rw-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.875rem;
+  font-weight: var(--rw-bold-weight);
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  border: 1px solid var(--rw-black);
+}
+
+.cta:hover, .cta:focus {
+  background-color: transparent;
+  color: var(--rw-black);
+}
+
+/* Desktop layout (two columns) */
+@media (min-width: 1024px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  /* Left column with content and testimonials */
+  .left-col {
+    grid-column: 1; 
+    grid-row: 1; 
+    align-items: flex-start;
+  }
+  
+  /* Right column with hero image */
+  .hero {
+    grid-column: 2; 
+    grid-row: 1 / span 2; 
+    max-width: 100%;
+  }
+  
+  .hero__img {
+    content: url('../../../public/images/dropdown-nav/image-hero-desktop.png'); /* Switch to desktop image */
+    max-height: 80vh; 
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+
+  .hero-text__title {
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-text__description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+}
+
+/* Adjust layout for extra-large screens */
+@media (min-width: 1200px) {
+  .main {
+    padding: 4rem;
+    gap: 8rem;
+  }
+  
+  .hero-text__title {
+    font-size: 4rem;
+  }
+  
+  /* Improve vertical alignment of content */
+  .left-col {
+    padding-top: 4rem;
+  }
+}
+
+/* Better spacing for very large screens */
+@media (min-width: 1400px) {
+  .main {
+    grid-template-columns: 45% 55%; 
+  }
+}
