@@ -10,7 +10,7 @@ export default function Testmonials() {
   return (
     <>
       <aside className={styles.testmonials}>
-        <h2 className={styles.srOnly}>Clients that we have worked with</h2>
+        <h2 className="sr-only">Clients that we have worked with</h2>
         <ol className={styles.testimonialsList}>
           <li className={styles.testimonialItem}>
             <Image 

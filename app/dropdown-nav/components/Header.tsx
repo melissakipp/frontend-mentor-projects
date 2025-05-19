@@ -37,7 +37,7 @@ export default function Header() {
             src={Logo} 
             alt="Logo" 
             width={100} 
-            height={20} 
+            height={30} 
           />
         </div>
         
@@ -52,8 +52,8 @@ export default function Header() {
             className={styles.iconMenu} 
             src={MenuIcon} 
             alt="" 
-            width={20}
-            height={20}
+            width={22}
+            height={22}
           />
         </button>
 
@@ -70,8 +70,8 @@ export default function Header() {
                   className={styles.iconArrow} 
                   src={ArrowIcon} 
                   alt=""
-                  width={10}
-                  height={10}
+                  width={12}
+                  height={7}
                 />
               </button>
               <ul className={`${styles.dropdownMenu} ${activeDropdown === 'features' ? styles.active : ''}`} id="features-dropdown">
@@ -149,8 +149,8 @@ export default function Header() {
                   className={styles.iconArrow} 
                   src={ArrowIcon} 
                   alt="" 
-                  width={10}
-                  height={10}
+                  width={12}
+                  height={7}
                 />
               </button>
               <ul id="company-dropdown" className={styles.dropdownMenu}>

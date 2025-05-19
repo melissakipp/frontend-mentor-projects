@@ -19,7 +19,7 @@ export default function MainContent() {
         />
       </section>
       <section className={`${styles.heroText} ${styles.leftCol}`}>
-        <h1 className={styles.srOnly}>Snap Home page</h1>
+        <h1 className="sr-only">Snap Home page</h1>
         <h2 className={styles.heroText__title}>Make remote work</h2>
         <p className={styles.heroText__description}>
           Get your team in sync, no matter your location. Streamline processes,

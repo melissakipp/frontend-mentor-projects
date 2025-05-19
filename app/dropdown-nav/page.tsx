@@ -4,7 +4,6 @@ import PersonalFooter from '../components/PersonalFooter';
 import styles from './page.module.css';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
-import Testmonials from './components/Testmonials';
 
 export default function page() {
   return (
@@ -15,7 +14,6 @@ export default function page() {
         <div className="container">
           <Header />
           <MainContent />
-          <Testmonials />
         </div>     
       </main>
     </div>
