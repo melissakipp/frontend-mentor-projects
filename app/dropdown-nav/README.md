@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - [GitHub Repository](https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/dropdown-nav)
-- [Live Site URL](https://frontend-mentor-projects.vercel.app/dropdown-nav)
+- [Live Site URL](https://frontend-mentor-projects-rho.vercel.app/dropdown-nav)
 
 ---
 
@@ -70,6 +70,6 @@ Users should be able to:
 
 ## Author
 
-- Portfolio – [melissakipp.com](https://melissakipp.com)
+- Portfolio – [melissajkipp.com](https://melissjakipp.com)
 - Frontend Mentor – [@melissakipp](https://www.frontendmentor.io/profile/melissakipp)
 - GitHub – [melissakipp](https://github.com/melissakipp)
