@@ -1,181 +1,242 @@
+'use client';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '@/../public/images/dropdown-nav/logo.svg';
-import MenuIcon from '@/../public/images/dropdown-nav/icon-menu.svg';
-import ArrowIcon from '@/../public/images/dropdown-nav/icon-arrow-down.svg';
-import TodoIcon from '@/../public/images/dropdown-nav/icon-todo.svg';
-import CalendarIcon from '@/../public/images/dropdown-nav/icon-calendar.svg';
-import RemindersIcon from '@/../public/images/dropdown-nav/icon-reminders.svg';
-import PlanningIcon from '@/../public/images/dropdown-nav/icon-planning.svg';
-
 import styles from './Header.module.css';
 
-import { useState, useEffect } from 'react';
+import Logo from '@/../public/images/dropdown-nav/logo.svg';
+import IconMenu from '../../../public/images/dropdown-nav/icon-menu.svg';
+import IconClose from '../../../public/images/dropdown-nav/icon-close-menu.svg';
+import IconArrowDown from '../../../public/images/dropdown-nav/icon-arrow-down.svg';
+import IconArrowUp from '../../../public/images/dropdown-nav/icon-arrow-up.svg';
+
+import IconTodo from '../../../public/images/dropdown-nav/icon-todo.svg';
+import IconCalendar from '../../../public/images/dropdown-nav/icon-calendar.svg';
+import IconReminders from '../../../public/images/dropdown-nav/icon-reminders.svg';
+import IconPlanning from '../../../public/images/dropdown-nav/icon-planning.svg';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
+    // Close dropdown when clicking outside
   useEffect(() => {
-    const handleEsc: (e: KeyboardEvent) => void = (e) => {
-      if (e.key === 'Escape') setActiveDropdown(null);
-    };
-
-    document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const toggleDropdown = (id: string) => {
-    setActiveDropdown(prev => (prev === id ? null : id));
-  }
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Close any open dropdowns when toggling mobile menu
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
 
   return (
-    <header className={styles.header}>
-      <nav className={styles.navbar}>
+    <header className={styles.header} ref={navRef}>
+      <div className={styles.headerContainer}>
+        {/* Logo */}
         <div className={styles.logo}>
-          <Image 
-            src={Logo} 
-            alt="Logo" 
-            width={100} 
-            height={30} 
-          />
+          <Image src={Logo} alt="Snap Logo" />
         </div>
-        
-        <button 
-          className={`${styles.button} ${styles.menuToggle}`} 
-          aria-expanded="false" 
-          aria-controls="nav-links" 
-          aria-label="Menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <Image 
-            className={styles.iconMenu} 
-            src={MenuIcon} 
-            alt="" 
-            width={22}
-            height={22}
-          />
-        </button>
 
-        <div id="nav-links" className={`${styles.navWrapper} ${menuOpen ? styles.active : ''}`}>
-          <ul className={styles.navLinks}>
-            <li className={styles.navLinksItem}>
+        {/* Desktop Navigation */}
+        <nav className={styles.desktopNav}>
+          <ul className={styles.navList}>
+            {/* Features Dropdown */}
+            <li className={styles.navItem}>
               <button 
-                className={`${styles.button} ${styles.dropdownToggle}`} 
-                aria-expanded={activeDropdown === 'features'}
+                className={styles.dropdownBtn}
                 onClick={() => toggleDropdown('features')}
+                aria-expanded={activeDropdown === 'features'}
               >
-                Features
+                <span>Features</span>
                 <Image 
-                  className={styles.iconArrow} 
-                  src={ArrowIcon} 
-                  alt=""
-                  width={12}
-                  height={7}
+                  src={activeDropdown === 'features' ? IconArrowUp : IconArrowDown} 
+                  alt="" 
+                  className={styles.dropdownIcon} 
                 />
               </button>
-              <ul className={`${styles.dropdownMenu} ${activeDropdown === 'features' ? styles.active : ''}`} id="features-dropdown">
-                <li className={styles.dropdownItem}>
-                  <Link href="#">
-                    <div className={styles.menuItemWrapper}>
-                      <Image
-                        className={styles.dropdownIcon}
-                        src={TodoIcon} 
-                        alt=""  
-                        aria-hidden="true"
-                        width={20}
-                        height={20} 
-                      />
+              {activeDropdown === 'features' && (
+                <ul className={styles.dropdown}>
+                  <li>
+                    <Link href="#" className={styles.dropdownItem}>
+                      <Image src={IconTodo} alt="" className={styles.featureIcon} />
                       <span>Todo List</span>
-                    </div>
-                  </Link>
-                </li>
-                <li className={styles.dropdownItem}>
-                  <Link href="#">
-                    <div className={styles.menuItemWrapper}>
-                      <Image 
-                        className={styles.dropdownIcon}
-                        src={CalendarIcon}
-                        alt="" 
-                        aria-hidden="true"
-                        width={20}
-                        height={20}
-                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className={styles.dropdownItem}>
+                      <Image src={IconCalendar} alt="" className={styles.featureIcon} />
                       <span>Calendar</span>
-                    </div>
-                  </Link>
-                </li>
-                <li className={styles.dropdownItem}>
-                  <Link href="#">
-                    <div className={styles.menuItemWrapper}>
-                      <Image 
-                        className={styles.dropdownIcon}
-                        src={RemindersIcon}
-                        alt=""                       
-                        aria-hidden="true"
-                        width={20}
-                        height={20}
-                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className={styles.dropdownItem}>
+                      <Image src={IconReminders} alt="" className={styles.featureIcon} />
                       <span>Reminders</span>
-                    </div>
-                  </Link>
-                </li>
-                <li className={styles.dropdownItem}>
-                  <Link href="#">
-                    <div className={styles.menuItemWrapper}>
-                      <Image 
-                        className={styles.dropdownIcon}
-                        src={PlanningIcon}
-                        alt=""             
-                        aria-hidden="true"
-                        width={20}
-                        height={20} 
-                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className={styles.dropdownItem}>
+                      <Image src={IconPlanning} alt="" className={styles.featureIcon} />
                       <span>Planning</span>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             
-            <li className={styles.navLinksItem}>
+            {/* Company Dropdown */}
+            <li className={styles.navItem}>
               <button 
-                className={`${styles.button} ${styles.dropdownToggle}`} 
-                aria-expanded="false" 
-                aria-controls="company-dropdown"
+                className={styles.dropdownBtn}
+                onClick={() => toggleDropdown('company')}
+                aria-expanded={activeDropdown === 'company'}
               >
                 Company
                 <Image 
-                  className={styles.iconArrow} 
-                  src={ArrowIcon} 
+                  src={activeDropdown === 'company' ? IconArrowUp : IconArrowDown} 
                   alt="" 
-                  width={12}
-                  height={7}
+                  className={styles.dropdownIcon} 
                 />
               </button>
-              <ul id="company-dropdown" className={styles.dropdownMenu}>
-                <li><Link href="#">History</Link></li>
-                <li><Link href="#">Our Team</Link></li>
-                <li><Link href="#">Blog</Link></li>
-              </ul>
+              {activeDropdown === 'company' && (
+                <ul className={styles.dropdown}>
+                  <li><Link href="#" className={styles.dropdownItem}>History</Link></li>
+                  <li><Link href="#" className={styles.dropdownItem}>Our Team</Link></li>
+                  <li><Link href="#" className={styles.dropdownItem}>Blog</Link></li>
+                </ul>
+              )}
             </li>
-
-            <li className={styles.navLinksItem}>
-              <Link href="#">Careers</Link>
-            </li>
-            <li className={styles.navLinksItem}>
-              <Link href="#">About</Link>
-            </li>
+            
+            <li className={styles.navItem}><Link href="#">Careers</Link></li>
+            <li className={styles.navItem}><Link href="#">About</Link></li>
           </ul>
-
-          <div className={styles.navAuth}>
-            <Link className={styles.login} href="#">Login</Link>
-            <Link className={`${styles.btn} ${styles.btnWide}`} href="#">Register</Link>
+          
+          <div className={styles.authButtons}>
+            <Link href="#" className={styles.loginBtn}>Login</Link>
+            <Link href="#" className={styles.registerBtn}>Register</Link>
           </div>
-        </div>
+        </nav>
 
-        <div className={styles.navOverlay} aria-hidden="true"></div>
-      </nav>
+        {/* Mobile Menu Button */}
+        <button 
+          className={styles.mobileMenuBtn} 
+          onClick={toggleMobileMenu}
+          aria-expanded={isMobileMenuOpen}
+          aria-label="Toggle menu"
+        >
+          <Image 
+            src={isMobileMenuOpen ? IconClose : IconMenu} 
+            alt={isMobileMenuOpen ? "Close menu" : "Open menu"} 
+          />
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className={styles.mobileNavOverlay}>
+          <nav className={styles.mobileNav}>
+            <ul className={styles.mobileNavList}>
+              {/* Features Mobile Dropdown */}
+              <li className={styles.mobileNavItem}>
+                <button 
+                  className={styles.mobileDropdownBtn}
+                  onClick={() => toggleDropdown('mobileFeatures')}
+                >
+                  Features
+                  <Image 
+                    src={activeDropdown === 'mobileFeatures' ? IconArrowUp : IconArrowDown} 
+                    alt="" 
+                    className={styles.dropdownIcon} 
+                  />
+                </button>
+                {activeDropdown === 'mobileFeatures' && (
+                  <ul className={styles.mobileDropdown}>
+                    <li>
+                      <Link href="#" className={styles.mobileDropdownItem}>
+                        <Image src={IconTodo} alt="" className={styles.featureIcon} />
+                        <span>Todo List</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className={styles.mobileDropdownItem}>
+                        <Image src={IconCalendar} alt="" className={styles.featureIcon} />
+                        <span>Calendar</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className={styles.mobileDropdownItem}>
+                        <Image src={IconReminders} alt="" className={styles.featureIcon} />
+                        <span>Reminders</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className={styles.mobileDropdownItem}>
+                        <Image src={IconPlanning} alt="" className={styles.featureIcon} />
+                        <span>Planning</span>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              
+              {/* Company Mobile Dropdown */}
+              <li className={styles.mobileNavItem}>
+                <button 
+                  className={styles.mobileDropdownBtn}
+                  onClick={() => toggleDropdown('mobileCompany')}
+                >
+                  Company
+                  <Image 
+                    src={activeDropdown === 'mobileCompany' ? IconArrowUp : IconArrowDown} 
+                    alt="" 
+                    className={styles.dropdownIcon} 
+                  />
+                </button>
+                {activeDropdown === 'mobileCompany' && (
+                  <ul className={styles.mobileDropdown}>
+                    <li><Link href="#" className={styles.mobileDropdownItem}>History</Link></li>
+                    <li><Link href="#" className={styles.mobileDropdownItem}>Our Team</Link></li>
+                    <li><Link href="#" className={styles.mobileDropdownItem}>Blog</Link></li>
+                  </ul>
+                )}
+              </li>
+              
+              <li className={styles.mobileNavItem}><Link href="#">Careers</Link></li>
+              <li className={styles.mobileNavItem}><Link href="#">About</Link></li>
+            </ul>
+            
+            <div className={styles.mobileAuthButtons}>
+              <Link href="#" className={styles.mobileLoginBtn}>Login</Link>
+              <Link href="#" className={styles.mobileRegisterBtn}>Register</Link>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
