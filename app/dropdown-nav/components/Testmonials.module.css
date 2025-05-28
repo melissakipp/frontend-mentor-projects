@@ -1,23 +1,22 @@
 /* ==========================================================================
   Testimonials Layout
    ========================================================================== */
-
 .testimonials {
-  margin: 2rem 0;
   width: 100%;
-  margin-top: 2rem;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto; /* Push content to bottom */
+  margin: 2rem auto;
 }
 
 .testimonialsList {
+  grid-row: 2; /* Place in the second (bottom) row */
   list-style-type: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .testimonialItem {
@@ -55,9 +54,9 @@
   .testimonials {
     grid-column: 1;
     grid-row: 2;
-    width: 100%;
-    margin-top: auto;
     align-self: end;
+    margin-top: auto;
+   
   }
 
   .testimonialImage {
@@ -68,6 +67,6 @@
 /* Adjust layout for extra-large screens */
 @media (min-width: 1200px) {
   .testimonials {
-    margin-top: 4rem;
+    margin-top: 4rem; 
   }
 }

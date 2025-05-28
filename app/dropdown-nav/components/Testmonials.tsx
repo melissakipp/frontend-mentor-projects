@@ -9,7 +9,7 @@ import MeetLogo from "@/../public/images/dropdown-nav/client-meet.svg";
 export default function Testmonials() {
   return (
     <>
-      <aside className={styles.testmonials}>
+      <aside className={styles.testimonials}>
         <h2 className="sr-only">Clients that we have worked with</h2>
         <ol className={styles.testimonialsList}>
           <li className={styles.testimonialItem}>
