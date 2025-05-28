@@ -70,6 +70,6 @@ Users should be able to:
 
 ## Author
 
-- Portfolio – [melissajkipp.com](https://melissjakipp.com)
+- Portfolio – [melissajkipp.com](https://melissajkipp.com)
 - Frontend Mentor – [@melissakipp](https://www.frontendmentor.io/profile/melissakipp)
 - GitHub – [melissakipp](https://github.com/melissakipp)
