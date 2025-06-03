@@ -16,16 +16,16 @@ export const metadata: Metadata = {
   },
   description: "Explore my web development projects, UX/UI case studies, and digital design work.",
   openGraph: {
-    title: "My Portfolio Website",
+    title: "Biweekly Frontend Mentor Challenges",
     description: "Explore my web development projects, UX/UI case studies, and digital design work.",
-    url: "https://www.mywebsite.com",
+    url: "https://frontend-mentor-projects-rho.vercel.app/",
     siteName: "Melissa Kipp | Web Developer",
     images: [
       {
-        url: "https://www.mywebsite.com/og-image.jpg",
+        url: "https://frontend-mentor-projects-rho.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Preview of Melissa's portfolio website",
+        alt: "Preview of Melissa's Frontend Mentor challenge website",
       },
     ],
     locale: "en_US",
