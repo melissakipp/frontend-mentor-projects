@@ -14,7 +14,23 @@ export const metadata: Metadata = {
     default: "Melissa Kipp | Frontend Mentor Challenges",
     template: "Melissa Kipp | %s",
   },
-  description: "A collection of Frontend Mentor challenges implemented with Next.js by Melissa Kipp",
+  description: "Explore my web development projects, UX/UI case studies, and digital design work.",
+  openGraph: {
+    title: "My Portfolio Website",
+    description: "Explore my web development projects, UX/UI case studies, and digital design work.",
+    url: "https://www.mywebsite.com",
+    siteName: "Melissa Kipp | Web Developer",
+    images: [
+      {
+        url: "https://www.mywebsite.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Preview of Melissa's portfolio website",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
