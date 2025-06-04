@@ -10,18 +10,16 @@ export default function page() {
     <>
     <BackBanner />
     <div className={styles.container}>
-      <main className={styles.main}>
-        <div className="container">
-          <Header />
-          <MainContent />
-        </div>     
-      </main>
+      <div className="container">
+        <Header />
+        <MainContent />
+      </div>
     </div>
     <footer>
       <PersonalFooter
-        mySolution=""
-        projectNotes="#"
-        projectReadme="#"
+        mySolution="https://frontend-mentor-projects-rho.vercel.app/"
+        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/notes.md"
+        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/README.md"
       />
     </footer>
     </>
