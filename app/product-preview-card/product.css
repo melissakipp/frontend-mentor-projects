@@ -80,7 +80,7 @@ img {
   background-color: var(--secondary-color);
   display: grid;
   place-content: center;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .product {

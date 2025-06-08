@@ -39,6 +39,13 @@ const projects: Project[] = [
     description: 'Responsive with accessible dropdown and frontend interaction testing',
     image: '/images/dropdown-nav/dropdown-nav-preview.png',
     path: '/dropdown-nav'
+  },
+  {
+    id: 'officelite',
+    title: 'Officelite coming soon site',
+    description: 'Build a responsive 2-page coming soon website with form validation, countdown timer, and custom form controls.',
+    image: '/images/dropdown-nav/dropdown-nav-preview.png',
+    path: '/dropdown-nav'
   }
 ];
 
