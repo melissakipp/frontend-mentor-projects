@@ -1,12 +1,20 @@
-import Link from 'next/link';
+import styles from "./page.module.css";
+
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Cards from './components/Cards';
+import Countdown from './components/Countdown';
 
 export default function page() {
   return (
-    <main>
-      <h1>landing page</h1>
-      <Link href="/officelite/sign-up">
-        <button>Sign Up</button>
-      </Link>
+    <>
+    <Header />
+    <main className={styles.mainContainer}>
+      <Hero />
+      <Cards />
+      <Countdown />
     </main>
+    </>
+    
   );
 }
