@@ -6,7 +6,7 @@ import Logo from '../../../public/images/officelite/shared/logo.svg';
 
 export default function Header() {
   return (
-    <header className={styles.container}>
+    <header className={styles.headerContainer}>
       {/* Logo */}
       <Link href="/" className={styles.logo}>
         <Image className={styles.logoImg} src={Logo} alt="Snap Logo" priority />

@@ -55,6 +55,14 @@
   --rw-color-text: hsl(0, 0%, 41%);
   --rw-color-background: hsl(0, 0%, 98%);
   --rw-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+  /* Officelite */
+  --ol-colors-neutral-800: #333950;
+  --ol-colors-neutral-0: #FAFAFA;
+  --ol-colors-blue-500: #5175FF;
+  --ol-corner-radius-12: 12px;
+  --ol-spacing-500: 40px;
+  --ol-corner-radius-full: 999px;
 }
 
 .sr-only {

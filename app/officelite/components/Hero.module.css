@@ -1,17 +1,114 @@
-/* Mobile first */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  margin: 2rem;
 }
 
-/* @media screen and (min-width: 475px) {
+.imageWrapper {
+  width: 100%;
+  padding: 3rem;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.colLeft {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 470px;
+  text-align: center;
+}
+
+.colRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 470px;
+  padding: 1.5rem;
+}
+
+.title {
+  color: var(--ol-neutral-800);
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #747B95;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.button {
+  display: inline-block;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FAFAFA;
+  background-color: var(--ol-colors-blue-500);
+  border-radius: var(--ol-corner-radius-full, 62.4375rem);
+  padding: var(--ol-corner-radius-12, 0.75rem) var(--ol-spacing-500, 2.5rem);
+  box-shadow: 0px 25px 25px -10px rgba(63, 91, 194, 0.25);
+  letter-spacing: .75px;
+}
+
+.button:hover, .button:focus {
+  border: 2px solid #FAFAFA;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 0px 0px 3px var(--ol-colors-neutral-0, #FFF), 0px 0px 0px 5px var(--ol-colors-blue-500, #5175FF);
+  will-change: transform;
+}
+
+
+@media screen and (max-width: 640px) and (max-width: 1023px) {
+  .imageWrapper {
+    max-width: 280px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .container {
-    outline: 1px solid red;
-  } 
-} */
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+
+  .colLeft,
+  .colRight {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .colRight {
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    width: 470px;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+}
 
 @media screen and (min-width: 1200px) {
   .container {

@@ -1,23 +1,22 @@
 /* Mobile first */
-.container {
+.headerContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 2.5rem 1rem 5rem 1rem;
+  margin: 3rem 1rem 5rem 1rem;
   padding: 0;
-  width: 100%;
 }
 
 @media screen and (min-width: 475px) {
-  .container {
+  .headerContainer {
     display: block;
-    margin: 5rem 1rem 7rem 1rem;
+    margin: 3rem 1rem 7rem 1rem;
     padding: 0.5rem;
   } 
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .headerContainer {
     max-width: 1440px;
     margin: 4rem auto 8.75rem auto;
   } 
