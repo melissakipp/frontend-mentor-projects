@@ -90,7 +90,6 @@
 
 html,
 body {
-  background-color: var(--ol-colors-neutral-50);
   height: 100%;
   overflow-x: hidden;
 }
