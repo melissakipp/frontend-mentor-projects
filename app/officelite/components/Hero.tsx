@@ -33,7 +33,7 @@ export default function Hero() {
           Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new collaboration platform built with an intuitive interface to improve productivity.
         </p>
         <div className={styles.btnContainer}>
-          <Link href="/officelite" className={styles.button}>
+          <Link href="/officelite/sign-up" className={styles.button}>
             Get Started
           </Link>
         </div>
