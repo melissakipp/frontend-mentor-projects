@@ -1,7 +1,83 @@
-.container {
+.card {
+  background-color: var(--ol-colors-neutral-0);
+  border-radius: var(--ol-spacing-150, 0.75rem);
+  box-shadow: 0px 50px 50px -25px rgba(75, 92, 154, 0.24);
+  color: var(--ol-colors-neutral-800);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  align-self: stretch;
+  gap: var(--ol-spacing-600, 3rem);
+  padding: var(--ol-spacing-500, 2.5rem) var(--ol-spacing-300, 1.5rem);
+  text-align: center;
+  font-feature-settings: 'liga' off, 'clig' off;
+  /* text-preset-2 */
+  font-family: "Kumbh Sans";
+  max-width: 360px;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 1.75rem */
+}
+
+.subtitle {
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 4.2rem */
+}
+
+.description {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 1.6rem */
+}
+
+.features {
+  list-style-type: none;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  
+}
+
+.featureItem {
+  padding: 0 0 var(--ol-spacing-300) 0;
+}
+
+.featureItem:last-child {
+  padding: 0;
+}
+
+.link {
+  border-radius: var(--ol-corner-radius-full, 62.4375rem);
+  background-color: var(--ol-colors-blue-100, #E4EAFF);
+  color: var(--ol-colors-blue-500, #5175FF);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: var(--ol-spacing-150) var(--ol-spacing-500);
+}
+
+.card:nth-child(odd) {
+  color: var(--colors-neutral-900, #25293A);
+}
+
+.card:nth-child(even) {
+  background-color: var(--ol-colors-blue-500);
+  color: var(--ol-colors-neutral-0);
+}
+
+.card:nth-child(even) .link {
+  background-color: var(--ol-colors-neutral-0);
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    min-width: 360px;
+  }
 }

@@ -1,3 +1,29 @@
-.containter {
-  background-color: blueviolet;
+.container {
+  background: linear-gradient(
+    to bottom,
+    var(--ol-colors-neutral-50) 0%,
+    var(--ol-colors-neutral-50) 50%,
+    var(--ol-colors-neutral-900) 50%,
+    var(--ol-colors-neutral-900) 100%
+  );
+  padding: 4rem 1rem;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  gap: 2rem;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1163px) {
+  .cardsWrapper {
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+  }
 }
