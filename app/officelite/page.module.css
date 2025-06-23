@@ -2,7 +2,7 @@
 
 .mainContainer {
   font-family: "Kumbh Sans";
-  background-color: none;
+  background-color: var(--ol-colors-neutral-50);
 }
 
 .pageWrapper {
