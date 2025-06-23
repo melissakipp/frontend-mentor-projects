@@ -58,10 +58,16 @@
 
   /* Officelite */
   --ol-colors-neutral-800: #333950;
-  --ol-colors-neutral-0: #FAFAFA;
+  --ol-colors-neutral-0: #FFFFFF;
+  --ol-colors-neutral-50: #FAFAFA;
   --ol-colors-blue-500: #5175FF;
   --ol-corner-radius-12: 12px;
+  --ol-spacing-150: 12px;
+  --ol-spacing-200: 16px;
+  --ol-spacing-300: 24px;
+  --ol-spacing-400: 32px;
   --ol-spacing-500: 40px;
+  --ol-spacing-600: 48px;
   --ol-corner-radius-full: 999px;
 }
 
@@ -84,6 +90,7 @@
 
 html,
 body {
+  background-color: var(--ol-colors-neutral-50);
   height: 100%;
   overflow-x: hidden;
 }
