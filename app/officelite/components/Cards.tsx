@@ -3,10 +3,10 @@ import Card from './Card';
 
 export default function Cards() {
   return (
-    <div className={styles.container}>
-      <Card />
-      <Card />
-      <Card />
-    </div>
-  )
+    <article className={styles.container}>
+      <Card type="free" />
+      <Card type="basic" />
+      <Card type="ultimate" />
+    </article>
+  );
 }
