@@ -24,6 +24,44 @@
   background-position: right top;
 }
 
+.pricingWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.pricingWrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -25%;
+  width: 100%;
+  height: 800px;
+  background-image: url('/images/officelite/home/bg-pattern-pricing.svg');
+  background-repeat: no-repeat;
+  background-size: contain; 
+  background-position: left bottom;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--ol-colors-neutral-900);
+}
+
+.contentWrapper::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  background-image: url('/images/officelite/home/bg-pattern-footer.svg');
+  background-repeat: no-repeat;
+  background-size: contain; 
+  background-position: right top;
+}
 
 @media screen and (max-width: 768px) {
   .pageWrapper::before {

@@ -12,8 +12,12 @@ export default function page() {
         <Header />
         <Hero />
       </div>
-      <Cards />
-      <Countdown />
+      <div className={styles.pricingWrapper}>
+        <Cards />
+      </div>
+      <div className={styles.contentWrapper}>
+        <Countdown />
+      </div>
     </main>
   );
 }
