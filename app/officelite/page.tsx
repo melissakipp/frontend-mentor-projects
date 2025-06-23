@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Cards from './components/Cards';
 import Countdown from './components/Countdown';
-import { redirect } from "next/dist/server/api-utils";
 
 export default function page() {
   return (
