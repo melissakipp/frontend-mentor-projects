@@ -5,8 +5,13 @@ import Hero from './components/Hero';
 import Cards from './components/Cards';
 import Countdown from './components/Countdown';
 
+import BackBanner from '../components/BackBanner';
+import PersonalFooter from '../components/PersonalFooter';
+
 export default function page() {
   return (
+    <>
+    <BackBanner />
     <main className={styles.mainContainer}>
       <div className={styles.pageWrapper}>
         <Header />
@@ -19,5 +24,13 @@ export default function page() {
         <Countdown />
       </div>
     </main>
+    <footer>
+      <PersonalFooter
+        mySolution=""
+        projectNotes="ttps://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/notes.md"
+        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/README.md"
+      />
+    </footer>
+    </>
   );
 }
