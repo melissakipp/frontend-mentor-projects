@@ -21,7 +21,12 @@ export default function page() {
         <Cards />
       </div>
       <div className={styles.contentWrapper}>
-        <Countdown />
+        <Countdown
+          targetDate="2025-11-04T00:00:00"
+          title="Coming 4 Nov 2025"
+          buttonText="Get Started"
+          buttonHref="/officelite/sign-up"
+        />
       </div>
     </main>
     <footer>

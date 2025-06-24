@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-
-import styles from './Countdown.module.css';
 import Link from 'next/link';
+import styles from './Countdown.module.css';
 
 interface TimeLeft {
   days: number;
@@ -15,61 +14,241 @@ function calculateTimeLeft(targetDate: Date): TimeLeft {
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
-  const seconds = Math.max(0, Math.floor(diff / 1000) % 60);
-  const minutes = Math.max(0, Math.floor(diff / 1000 / 60) % 60);
-  const hours = Math.max(0, Math.floor(diff / 1000 / 60 / 60) % 24);
-  const days = Math.max(0, Math.floor(diff / 1000 / 60 / 60 / 24));
-
-  return { days, hours, minutes, seconds };
+  return {
+    days: Math.max(0, Math.floor(diff / 1000 / 60 / 60 / 24)),
+    hours: Math.max(0, Math.floor(diff / 1000 / 60 / 60) % 24),
+    minutes: Math.max(0, Math.floor(diff / 1000 / 60) % 60),
+    seconds: Math.max(0, Math.floor(diff / 1000) % 60),
+  };
 }
 
-export default function Countdown() {
-  const [hasMounted, setHasMounted] = useState(false);
-  const targetDate = new Date('2025-11-04T00:00:00');
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(targetDate));
+interface CountdownProps {
+  // Core functionality
+  targetDate?: string | Date;
+  
+  // Layout options
+  layout?: 'vertical' | 'horizontal' | 'compact' | 'minimal';
+  size?: 'small' | 'medium' | 'large';
+  
+  // Content customization
+  title?: string;
+  showTitle?: boolean;
+  showButton?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
+  
+  // Styling props
+  theme?: 'default' | 'dark' | 'light' | 'custom';
+  colorScheme?: {
+    primary?: string;
+    secondary?: string;
+    background?: string;
+    text?: string;
+    accent?: string;
+    blockBackground?: string;
+    blockText?: string;
+  };
+  
+  // CSS class overrides
+  className?: string;
+  titleClassName?: string;
+  countdownClassName?: string;
+  blockClassName?: string;
+  buttonClassName?: string;
+  
+  // Style overrides
+  containerStyle?: React.CSSProperties;
+  titleStyle?: React.CSSProperties;
+  countdownStyle?: React.CSSProperties;
+  blockStyle?: React.CSSProperties;
+  buttonStyle?: React.CSSProperties;
+  
+  // Advanced customization
+  customStyles?: Record<string, string>;
+  units?: Array<'days' | 'hours' | 'minutes' | 'seconds'>;
+  unitLabels?: Record<string, string>;
+}
 
-  // Only run countdown after the component has mounted in the browser
+const defaultColorSchemes = {
+  default: {
+    primary: 'var(--ol-colors-blue-500)',
+    secondary: 'var(--ol-colors-neutral-0)',
+    background: 'transparent',
+    text: 'var(--ol-colors-neutral-0)',
+    accent: 'var(--ol-colors-blue-500)',
+    blockBackground: 'var(--ol-colors-neutral-800)',
+    blockText: 'var(--ol-colors-neutral-0)',
+  },
+  dark: {
+    primary: '#3B82F6',
+    secondary: '#F8FAFC',
+    background: '#0F172A',
+    text: '#F8FAFC',
+    accent: '#3B82F6',
+    blockBackground: '#1E293B',
+    blockText: '#F8FAFC',
+  },
+  light: {
+    primary: '#2563EB',
+    secondary: '#1E293B',
+    background: '#F8FAFC',
+    text: '#1E293B',
+    accent: '#2563EB',
+    blockBackground: '#E2E8F0',
+    blockText: '#1E293B',
+  },
+};
+
+export default function Countdown({
+  targetDate = '2025-11-04T00:00:00',
+  layout = 'vertical',
+  size = 'medium',
+  title = 'Coming Soon',
+  showTitle = true,
+  showButton = true,
+  buttonText = 'Get Started',
+  buttonHref = '/officelite',
+  theme = 'default',
+  colorScheme = {},
+  className = '',
+  titleClassName = '',
+  countdownClassName = '',
+  blockClassName = '',
+  buttonClassName = '',
+  containerStyle = {},
+  titleStyle = {},
+  countdownStyle = {},
+  blockStyle = {},
+  buttonStyle = {},
+  customStyles = {},
+  units = ['days', 'hours', 'minutes', 'seconds'],
+  unitLabels = {},
+}: CountdownProps) {
+  const [hasMounted, setHasMounted] = useState(false);
+  const parsedTargetDate = typeof targetDate === 'string' ? new Date(targetDate) : targetDate;
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(parsedTargetDate));
+
   useEffect(() => {
     setHasMounted(true);
-
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
+      setTimeLeft(calculateTimeLeft(parsedTargetDate));
     }, 1000);
-
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [parsedTargetDate]);
 
-  if (!hasMounted) return null; // Avoid rendering before client-side hydration
+  if (!hasMounted) return null;
+
+  // Merge color schemes
+  const finalColorScheme = {
+    ...(defaultColorSchemes[theme as keyof typeof defaultColorSchemes] || defaultColorSchemes['default']),
+    ...colorScheme,
+  };
+
+  // Create CSS custom properties
+  const cssVariables = {
+    '--countdown-primary': finalColorScheme.primary,
+    '--countdown-secondary': finalColorScheme.secondary,
+    '--countdown-background': finalColorScheme.background,
+    '--countdown-text': finalColorScheme.text,
+    '--countdown-accent': finalColorScheme.accent,
+    '--countdown-block-bg': finalColorScheme.blockBackground,
+    '--countdown-block-text': finalColorScheme.blockText,
+    ...customStyles,
+  };
+
+  // Layout classes
+  const layoutClasses = {
+    vertical: styles.container,
+    horizontal: `${styles.container} ${styles.horizontal}`,
+    compact: `${styles.container} ${styles.compact}`,
+    minimal: `${styles.container} ${styles.minimal}`,
+  };
+
+  // Size classes
+  const sizeClasses = {
+    small: styles.small,
+    medium: '',
+    large: styles.large,
+  };
+
+  const containerClasses = `${layoutClasses[layout]} ${sizeClasses[size]} ${className}`.trim();
+
+  // Default unit labels
+  const defaultUnitLabels = {
+    days: 'days',
+    hours: 'hours',
+    minutes: 'minutes',
+    seconds: 'seconds',
+  };
+
+  const finalUnitLabels = { ...defaultUnitLabels, ...unitLabels };
 
   return (
-    <section aria-labelledby="countdown-heading" className={styles.container}>
-      <h2 id="countdown-heading" className={styles.title}>Coming <span className={styles.launch}>4 Nov 2025</span></h2>
-      <div aria-live="polite">
+    <section
+      aria-labelledby="countdown-heading"
+      className={containerClasses}
+      style={{ ...cssVariables, ...containerStyle } as React.CSSProperties}
+    >
+      {showTitle && (
+        <h3
+          id="countdown-heading"
+          className={`${styles.title} ${titleClassName}`.trim()}
+          style={{
+            color: finalColorScheme.text,
+            ...titleStyle,
+          }}
+        >
+          {title}
+        </h3>
+      )}
+
+      <div 
+        className={`${styles.countdownBox} ${countdownClassName}`.trim()} 
+        aria-live="polite"
+        style={countdownStyle}
+      >
         <dl className={styles.list}>
-          <div className={styles.block}>
-            <dt className={styles.term}>days</dt>
-            <dd data-testid="days" className={styles.definition}
-            >{timeLeft.days}</dd>
-          </div>
-          <div className={styles.block}>
-            <dt className={styles.term}>hours</dt>
-            <dd data-testid="hours" className={styles.definition}>{timeLeft.hours}</dd>
-          </div>
-          <div className={styles.block}>
-            <dt className={styles.term}>min</dt>
-            <dd data-testid="minutes" className={styles.definition}>{timeLeft.minutes}</dd>
-          </div>
-          <div className={styles.block}>
-            <dt className={styles.term}>sec</dt>
-            <dd data-testid="seconds" className={styles.definition}>{timeLeft.seconds}</dd>
-          </div>
+          {units.map((unit) => (
+            <div 
+              key={unit} 
+              className={`${styles.block} ${blockClassName}`.trim()}
+              style={{
+                backgroundColor: finalColorScheme.blockBackground,
+                ...blockStyle,
+              }}
+            >
+              <dt 
+                className={styles.term}
+                style={{ color: finalColorScheme.blockText }}
+              >
+                {finalUnitLabels[unit]}
+              </dt>
+              <dd 
+                className={styles.definition}
+                style={{ color: finalColorScheme.blockText }}
+              >
+                {timeLeft[unit as keyof TimeLeft]}
+              </dd>
+            </div>
+          ))}
         </dl>
       </div>
-      <div>
-        <Link  href="/officelite" className={styles.link}>
-          Get Started
-        </Link>
-      </div>
+
+      {showButton && (
+        <div className={styles.buttonContainer}>
+          <Link 
+            href={buttonHref} 
+            className={`${styles.link} ${buttonClassName}`.trim()}
+            style={{
+              backgroundColor: finalColorScheme.primary,
+              color: finalColorScheme.secondary,
+              ...buttonStyle,
+            }}
+          >
+            {buttonText}
+          </Link>
+        </div>
+      )}
     </section>
   );
 }
