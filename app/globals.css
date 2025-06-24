@@ -64,13 +64,14 @@
   --ol-colors-blue-500: #5175FF;
   --ol-colors-neutral-900: #25293A;
   --ol-corner-radius-12: 12px;
+  --ol-spacing-050: 0.25rem;
   --ol-spacing-150: 0.75rem;
   --ol-spacing-200: 1rem;
   --ol-spacing-300: 1.5rem;
   --ol-spacing-400: 2rem;
   --ol-spacing-500: 2.5rem; 
   --ol-spacing-600: 3rem;
-  --ol-corner-radius-full: 999px;
+  --ol-corner-radius-full: 62.4375rem;
 }
 
 .sr-only {
