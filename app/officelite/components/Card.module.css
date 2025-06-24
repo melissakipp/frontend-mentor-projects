@@ -7,11 +7,9 @@
   flex-direction: column;
   align-items: center;
   align-self: stretch;
-  gap: var(--ol-spacing-600, 3rem);
-  padding: var(--ol-spacing-500, 2.5rem) var(--ol-spacing-300, 1.5rem);
+  padding: var(--ol-spacing-600) var(--ol-spacing-300);
   text-align: center;
   font-feature-settings: 'liga' off, 'clig' off;
-  /* text-preset-2 */
   font-family: "Kumbh Sans";
   max-width: 360px;
 }
@@ -20,21 +18,21 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 140%; /* 1.75rem */
+  margin: auto auto var(--ol-spacing-200) auto;
 }
 
 .subtitle {
   font-size: 3.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; /* 4.2rem */
+  margin: auto auto var(--ol-spacing-100) auto;
 }
 
 .description {
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 1.6rem */
+  margin: auto auto var(--ol-spacing-600) auto;
 }
 
 .features {
@@ -42,11 +40,11 @@
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  
+  margin: auto auto var(--ol-spacing-600) auto;
 }
 
 .featureItem {
-  padding: 0 0 var(--ol-spacing-300) 0;
+  padding: 0 0 var(--ol-spacing-200) 0;
 }
 
 .featureItem:last-child {

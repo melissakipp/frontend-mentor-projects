@@ -14,7 +14,7 @@ export default function Card({ type }: CardProps) {
   const plan = cardData[type] || {
     title: 'Plan Not Found',
     subtitle: 'Error',
-    description: 'Plan data not available',
+    description: '',
     features: ['Contact support'],
     link: '/officelite/sign-up'
   };
