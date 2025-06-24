@@ -27,7 +27,6 @@
 .pricingWrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh;
 }
 
 .pricingWrapper::before {
@@ -36,7 +35,6 @@
   bottom: -50%;
   left: -25%;
   width: 100%;
-  height: 800px;
   background-image: url('/images/officelite/home/bg-pattern-pricing.svg');
   background-repeat: no-repeat;
   background-size: contain; 
@@ -46,7 +44,6 @@
 .contentWrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   background-color: var(--ol-colors-neutral-900);
 }
 
@@ -56,11 +53,10 @@
   top: -25%;
   left: 0;
   width: 100%;
-  height: 800px;
   background-image: url('/images/officelite/home/bg-pattern-footer.svg');
   background-repeat: no-repeat;
   background-size: contain; 
-  background-position: right top;
+  background-position: left bottom;
 }
 
 @media screen and (max-width: 768px) {
