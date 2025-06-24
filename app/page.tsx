@@ -44,7 +44,7 @@ const projects: Project[] = [
     id: 'officelite',
     title: 'Officelite coming soon site',
     description: 'Build a responsive 2-page coming soon website with form validation, countdown timer, and custom form controls.',
-    image: '/under-construction_ChatGPT-Image.png',
+    image: '/images/officelite/officelite-preview.png',
     path: '/officelite'
   }
 ];
