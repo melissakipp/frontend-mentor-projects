@@ -1,7 +1,79 @@
 .container {
+  font-family: "Kumbh Sans";
+  color: var(--ol-colors-neutral-0);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  padding: 4rem .5rem;
+}
+
+.title {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 1.6rem */
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+  margin: auto auto 1rem auto;
+}
+
+.launch {
+  color: var(--ol-colors-blue-500);
+}
+
+.list {
+  font-family: inherit;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem auto 3rem auto;
+}
+
+.list > .block {
+  background: var(--ol-colors-neutral-800);
+  border-radius: var(--ol-spacing-150);
+  display: flex;
+  flex-direction: column-reverse; /* number on top, label below */
+  align-items: center;
+  min-width: 6rem;
+  padding: var(--ol-spacing-200) var(--ol-spacing-150);
+  gap: var(--ol-spacing-050);
+  flex: 1 0 0;
+}
+
+.term {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ol-colors-neutral-0);
+  letter-spacing: .05px;
+  line-height: 160%;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.definition {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.link{
+  display: inline-block;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ol-colors-neutral-50);
+  background-color: var(--ol-colors-blue-500);
+  border-radius: var(--ol-corner-radius-full);
+  padding: var(--ol-corner-radius-12) var(--ol-spacing-500);
+  box-shadow: 0px 25px 25px -10px rgba(63, 91, 194, 0.25);
+  letter-spacing: .75px;
+}
+
+.link:hover, .link:focus {
+  border: 2px solid var(--ol-colors-neutral-50);
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 0px 0px 3px var(--ol-colors-neutral-0), 0px 0px 0px 5px var(--ol-colors-blue-500);
+  will-change: transform;
 }
