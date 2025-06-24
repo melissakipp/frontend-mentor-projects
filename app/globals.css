@@ -56,11 +56,14 @@
   --rw-color-background: hsl(0, 0%, 98%);
   --rw-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 
-  /* Officelite */
-  --ol-colors-neutral-900: #25293A;
-  --ol-colors-neutral-800: #333950;
+  /* Officelite */ 
   --ol-colors-neutral-0: #FFFFFF;
   --ol-colors-neutral-50: #FAFAFA;
+  --ol-colors-neutral-500: #747B95;
+  --ol-colors-neutral-800: #333950;
+  --ol-colors-neutral-900: #25293A;
+  --ol-colors-blue-100: #E4EAFF;
+  --ol-colors-blue-300: #829CFF;
   --ol-colors-blue-500: #5175FF;
   --ol-colors-neutral-900: #25293A;
   --ol-corner-radius-12: 12px;
