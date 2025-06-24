@@ -1,0 +1,51 @@
+.title {
+  color: var(--colors-neutral-800);
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+}
+
+.multiColorTitle::before {
+  color: var(--colors-neutral-800);
+}
+
+.multiColorTitle::after {
+  content: '4 Nov 2020';
+  color: var(--ol-colors-blue-500);
+}
+
+.paragraph {
+  color: var(--ol-colors-neutral-500);
+  text-align: center;
+}
+
+.myCustomCountdown {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+} 
+
+.block {
+  margin: auto .5rem auto auto;
+}
+
+.term {
+  color: var(--ol-colors-neutral-800);
+}
+
+.colLeft { 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--ol-spacing-500);
+  max-width: 69.375rem;
+  margin: var(--ol-spacing-100);
+}
+
+@media screen and (min-width: 768px) {
+  .title {font-size: 3.5rem;}
+}
