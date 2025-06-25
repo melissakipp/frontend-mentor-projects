@@ -475,3 +475,146 @@ The enhanced countdown component provides:
 ✅ **Backward Compatible** - No breaking changes  
 
 This enhanced version transforms a simple countdown into a highly flexible, design-system-ready component that can adapt to any visual requirement while maintaining excellent performance and accessibility standards.
+
+## Screen Reader Examples
+```JSX
+import Countdown from './Countdown';
+
+// Example 1: Basic screen reader context
+export function BasicSrOnlyCountdown() {
+  return (
+    <Countdown
+      title="Product Launch"
+      showSrOnlyText={true}
+      srOnlyText="This countdown shows the time remaining until our new product launches on November 4th, 2025. The countdown updates every second."
+    />
+  );
+}
+
+// Example 2: Event context with additional information
+export function EventCountdown() {
+  return (
+    <Countdown
+      title="Conference 2025"
+      targetDate="2025-09-15T09:00:00"
+      showSrOnlyText={true}
+      srOnlyText="Annual Tech Conference countdown. Event starts September 15th, 2025 at 9:00 AM Pacific Time. Registration closes when countdown reaches zero."
+      buttonText="Register Now"
+      buttonHref="/register"
+    />
+  );
+}
+
+// Example 3: Sale countdown with urgency context
+export function SaleCountdown() {
+  return (
+    <Countdown
+      title="Flash Sale Ends"
+      targetDate="2025-07-01T23:59:59"
+      showSrOnlyText={true}
+      srOnlyText="Limited time flash sale countdown. Save 50% on all items. Sale automatically ends when this countdown reaches zero. No extensions will be offered."
+      theme="dark"
+      colorScheme={{
+        primary: '#EF4444',
+        accent: '#EF4444'
+      }}
+      buttonText="Shop Sale"
+    />
+  );
+}
+
+// Example 4: Custom sr-only class name
+export function CustomSrOnlyCountdown() {
+  return (
+    <Countdown
+      title="Webinar Starts"
+      showSrOnlyText={true}
+      srOnlyText="Live webinar countdown. Join us for 'Advanced React Patterns' webinar. Link will be activated when countdown reaches zero."
+      srOnlyClassName="visually-hidden" // Using custom class name
+      layout="horizontal"
+    />
+  );
+}
+
+// Example 5: Detailed accessibility information
+export function DetailedAccessibilityCountdown() {
+  return (
+    <Countdown
+      title="Early Bird Ends"
+      targetDate="2025-08-20T00:00:00"
+      showSrOnlyText={true}
+      srOnlyText="Early bird pricing countdown for DevCon 2025. Current discount: 40% off regular ticket price. After countdown expires, pricing increases to standard rates. Countdown displays days, hours, minutes, and seconds remaining. Screen readers will announce updates as time changes."
+      buttonText="Get Early Bird Ticket"
+      units={['days', 'hours', 'minutes']}
+      size="large"
+    />
+  );
+}
+
+// Example 6: Minimal countdown with context
+export function MinimalAccessibleCountdown() {
+  return (
+    <Countdown
+      layout="minimal"
+      size="small"
+      showTitle={false}
+      showButton={false}
+      showSrOnlyText={true}
+      srOnlyText="Time remaining until next session starts."
+      units={['minutes', 'seconds']}
+      targetDate="2025-06-24T14:30:00"
+    />
+  );
+}
+
+// Example 7: Multiple language support
+export function MultiLanguageCountdown() {
+  const isSpanish = true; // This would come from your i18n system
+  
+  return (
+    <Countdown
+      title={isSpanish ? "Próximo Evento" : "Next Event"}
+      showSrOnlyText={true}
+      srOnlyText={
+        isSpanish 
+          ? "Cuenta regresiva para el próximo evento. El evento comienza el 4 de noviembre de 2025. La cuenta regresiva se actualiza cada segundo mostrando días, horas, minutos y segundos restantes."
+          : "Countdown to the next event. Event starts November 4th, 2025. Countdown updates every second showing days, hours, minutes, and seconds remaining."
+      }
+      unitLabels={
+        isSpanish 
+          ? { days: 'Días', hours: 'Horas', minutes: 'Minutos', seconds: 'Segundos' }
+          : undefined
+      }
+    />
+  );
+}
+
+// Example 8: Dynamic sr-only text based on time remaining
+export function DynamicSrOnlyCountdown() {
+  // This would be calculated based on actual time remaining
+  const timeLeft = { days: 5, hours: 12, minutes: 30, seconds: 45 };
+  
+  const generateSrOnlyText = () => {
+    if (timeLeft.days > 7) {
+      return "More than a week remaining until the event starts.";
+    } else if (timeLeft.days > 1) {
+      return `${timeLeft.days} days remaining until the event starts. Registration is still open.`;
+    } else if (timeLeft.days === 1) {
+      return "Less than 24 hours remaining! Final chance to register for the event.";
+    } else if (timeLeft.hours > 1) {
+      return `Only ${timeLeft.hours} hours remaining until the event starts. Last minute registrations accepted.`;
+    } else {
+      return "Event starting very soon! Registration may be closed.";
+    }
+  };
+
+  return (
+    <Countdown
+      title="Conference Registration"
+      showSrOnlyText={true}
+      srOnlyText={generateSrOnlyText()}
+      buttonText="Register"
+    />
+  );
+}
+```
