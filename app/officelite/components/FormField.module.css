@@ -1,0 +1,86 @@
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inlineGroup {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sideLabel {
+  margin-bottom: 0; /* override vertical label spacing */
+  min-width: 100px; 
+}
+
+.input, .inputBottom {
+  font-family: inherit;
+  color: var(--colors-neutral-500, #747B95);
+  display: flex;
+  padding: var(--ol-spacing-200, 1rem);
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem; /* 175% */
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.inputBottom {
+  border: none;
+  border-bottom: 1px solid var(--ol-colors-neutral-400);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.input::placeholder, .inputBottom::placeholder {
+  padding-left: var(--ol-spacing-200, 1rem);
+}
+
+.inputError {
+  border-color: red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .input {
+    font-size: 1.125rem;
+  }
+}

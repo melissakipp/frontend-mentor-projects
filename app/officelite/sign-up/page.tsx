@@ -1,5 +1,6 @@
 import Countdown from '../components/Countdown';
 import Header from '../components/Header';
+import SignupForm from '../components/SignupForm';
 
 import styles from './Signup.module.css';
 
@@ -33,8 +34,8 @@ export default function signUp() {
               srOnlyText='This countdown shows the time remaining until our new site launches on November 4th, 2025. The countdown updates every second.'
             />
             </section>
+            <SignupForm />
         </article>
-        
       </main>
     </section>
   );
