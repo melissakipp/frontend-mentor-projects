@@ -36,6 +36,11 @@ interface CountdownProps {
   showButton?: boolean;
   buttonText?: string;
   buttonHref?: string;
+
+  // Accessibility options
+  srOnlyText?: string;
+  showSrOnlyText?: boolean;
+  srOnlyClassName?: string;
   
   // Styling props
   theme?: 'default' | 'dark' | 'light' | 'custom';
@@ -123,6 +128,9 @@ export default function Countdown({
   customStyles = {},
   units = ['days', 'hours', 'minutes', 'seconds'],
   unitLabels = {},
+  srOnlyText = '',
+  showSrOnlyText = false,
+  srOnlyClassName = 'sr-only',
 }: CountdownProps) {
   const [hasMounted, setHasMounted] = useState(false);
   const parsedTargetDate = typeof targetDate === 'string' ? new Date(targetDate) : targetDate;
@@ -189,6 +197,12 @@ export default function Countdown({
       className={containerClasses}
       style={{ ...cssVariables, ...containerStyle } as React.CSSProperties}
     >
+      {showSrOnlyText && srOnlyText && (
+        <p data-testid="sr-launch-info" className={srOnlyClassName}>
+          {srOnlyText}
+        </p>
+      )}
+
       {showTitle && (
         <h3
           id="countdown-heading"
@@ -224,6 +238,7 @@ export default function Countdown({
                 {finalUnitLabels[unit]}
               </dt>
               <dd 
+                data-testid={unit} 
                 className={styles.definition}
                 style={{ color: finalColorScheme.blockText }}
               >
