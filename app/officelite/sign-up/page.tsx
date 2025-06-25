@@ -12,7 +12,6 @@ export default function signUp() {
           <section className={styles.colLeft}>
             <h2 className={styles.title}>Work smarter. Save time.</h2>
             <p className={styles.paragraph}>Easily manage your projects. Get on the list and receive in-app perks available only to early subscribers. We are moving into final development and getting ready for official launch soon.</p>
-            <p className='sr-only'>This countdown ends November 4th 2025.</p>
             <Countdown
               className={styles.myCustomCountdown}
               titleClassName={styles.multiColorTitle}
@@ -30,6 +29,8 @@ export default function signUp() {
                 '--custom-border': '1px solid rgba(139, 92, 246, 0.2)',
               }}
               showButton={false}
+              showSrOnlyText={true}
+              srOnlyText='This countdown shows the time remaining until our new site launches on November 4th, 2025. The countdown updates every second.'
             />
             </section>
         </article>
