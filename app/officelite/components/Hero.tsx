@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import styles from './Hero.module.css';
-import HeroImage from '@/public/images/officelite/home/illustration-charts.svg';
+import HeroImage from '../../../public/images/officelite/home/illustration-charts.svg';
 
 export default function Hero() {
   return (
