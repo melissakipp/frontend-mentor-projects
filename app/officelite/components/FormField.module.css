@@ -23,9 +23,15 @@
 }
 
 .label {
+  display: flex;
+  flex: row no-wrap;
+  align-self: center;
+  justify-content: center;
+  min-width: fit-content;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .sideLabel {
@@ -54,6 +60,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  
 }
 
 .inputBottom {
@@ -71,6 +78,19 @@
 
 .inputError {
   border-color: red;
+}
+
+.select {
+  background-color: var(--ol-colors-neutral-0);
+  padding: 0.5rem;
+  font-family: inherit;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+.select:focus {
+  font-family: "Kumbh Sans";
 }
 
 .errorMessage {

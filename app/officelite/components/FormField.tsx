@@ -44,13 +44,12 @@ export default function FormField({
           required={required}
           aria-invalid={!!error}
           aria-describedby={error ? `${id}-error` : undefined}
-          className={inputClass}
+          className={`${inputClass} ${styles.select}`}
         >
           {options.map(option => (
             <option
               key={option.toLowerCase()}
               value={option.toLowerCase()}
-              style={{ color: '#333', backgroundColor: '#fff'}}
             >
               {option}
             </option>

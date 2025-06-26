@@ -9,7 +9,7 @@ export default function signUp() {
     <section>
       <Header />
       <main>
-        <article>
+        <article className={styles.layout}>
           <section className={styles.colLeft}>
             <h2 className={styles.title}>Work smarter. Save time.</h2>
             <p className={styles.paragraph}>Easily manage your projects. Get on the list and receive in-app perks available only to early subscribers. We are moving into final development and getting ready for official launch soon.</p>
@@ -34,7 +34,10 @@ export default function signUp() {
               srOnlyText='This countdown shows the time remaining until our new site launches on November 4th, 2025. The countdown updates every second.'
             />
             </section>
-            <SignupForm />
+            <div className={styles.colRight}>
+              <SignupForm />
+            </div>
+            
         </article>
       </main>
     </section>

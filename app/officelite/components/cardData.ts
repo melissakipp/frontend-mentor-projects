@@ -22,7 +22,7 @@ export const cardData: CardDataType = {
       '2 GB storage',
       'Great security and support'
     ],
-    link: '/officelite/sign-up/free'
+    link: '/officelite/sign-up'
   },
   basic: {
     title: 'Pro',
@@ -33,7 +33,7 @@ export const cardData: CardDataType = {
       '50 GB storage',
       'More control and insights'
     ],
-    link: '/officelite/sign-up/basic'
+    link: '/officelite/sign-up'
   },
   ultimate: {
     title: 'Ultimate',
@@ -44,6 +44,6 @@ export const cardData: CardDataType = {
       '100 GB storage',
       'VIP support'
     ],
-    link: '/officelite/sign-up/ultimate'
+    link: '/officelite/sign-up'
   }
 };
