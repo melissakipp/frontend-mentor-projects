@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 2rem; /* space between colLeft and colRight */
   padding: 1rem;
+  background-color: var(--ol-colors-neutral-50);
+
 }
 
 .colLeft { 
@@ -65,7 +67,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    gap: 4rem; /* more space between columns on desktop */
+    gap: 0 4rem; 
   }
 
   .colLeft, .colRight {

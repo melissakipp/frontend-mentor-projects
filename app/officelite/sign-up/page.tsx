@@ -7,9 +7,9 @@ import styles from './Signup.module.css';
 export default function signUp() {
   return (
     <section>
-      <Header />
       <main>
         <article className={styles.layout}>
+          <Header />
           <section className={styles.colLeft}>
             <h2 className={styles.title}>Work smarter. Save time.</h2>
             <p className={styles.paragraph}>Easily manage your projects. Get on the list and receive in-app perks available only to early subscribers. We are moving into final development and getting ready for official launch soon.</p>
