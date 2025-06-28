@@ -1,19 +1,14 @@
 .container {
-  background: linear-gradient(
-    to bottom,
-    var(--ol-colors-neutral-50) 0%,
-    var(--ol-colors-neutral-50) 50%,
-    var(--ol-colors-neutral-900) 50%,
-    var(--ol-colors-neutral-900) 100%
-  );
-  margin: 0;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: var(--ol-spacing-300, 1rem) 0;
+  height: auto;
 }
 
 .form {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 1rem;
+  padding: var(--ol-spacing-500) var(--ol-spacing-400);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-500, 2.5rem);
@@ -24,29 +19,26 @@
 
 .submitButton {
   display: inline-block;
-  padding: 1rem var(--ol-spacing-500, 2.5rem);
+  padding: 1rem;
   color: var(--ol-colors-neutral-50);
-  border: none;
+  border: 2px solid transparent; /* Always have a 2px border but make it transparent */
   border-radius: var(--ol-corner-radius-full);
   font-weight: 700;
   letter-spacing: .75px;
   cursor: pointer;
-  transition: background-color 0.4s ease;
+  transition: all 0.3s ease;
   box-shadow: 0px 25px 25px -10px rgba(63, 91, 194, 0.25);
-  border-radius: var(--ol-corner-radius-full, 62.4375rem);
   background-color: var(--ol-colors-blue-500, #5175FF);
 }
 
 .submitButton:hover {
-  border: 2px solid var(--ol-colors-neutral-50);
-  transition: background-color 0.3s ease;
+  border-color: var(--ol-colors-neutral-50);
   box-shadow: 0px 0px 0px 3px var(--ol-colors-neutral-0), 0px 0px 0px 5px var(--ol-colors-blue-500);
 }
 
 @media screen and (min-width: 767px) {
   .form {
     width: 100%;
-    padding: 1rem;
   }
 
   .submitButton {
@@ -60,16 +52,18 @@
     flex: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: var(--ol-spacing-500, 2.5rem);
+    gap: var(--ol-spacing-500);
     width: 100%;
-    height: 100vh;
-    padding: 2rem;
-    background: linear-gradient(
-      to right,
-      var(--ol-colors-neutral-50) 0%,
-      var(--ol-colors-neutral-50) 50%,
-      var(--ol-colors-neutral-900) 50%,
-      var(--ol-colors-neutral-900) 100%
-    );
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
   } 
+}
+
+/* For desktop */
+@media screen and (min-width: 767px) {
+  .container {
+    height: auto; /* Allow natural height based on content */
+    min-height: 0; /* Override any min-height if present */
+  }
 }

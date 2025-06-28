@@ -4,18 +4,20 @@
   flex-direction: row;
   justify-content: center;
   padding: 3rem 1rem 5rem 1rem;
+  background: transparent;
+  width: 100%;
 }
 
 @media screen and (min-width: 475px) {
   .headerContainer {
     display: block;
-    padding: 3rem 1rem 7rem 1rem;
+    padding: 2rem 1rem 4rem 1rem;
   } 
 }
 
 @media screen and (min-width: 1200px) {
   .headerContainer {
     max-width: 1440px;
-    padding: 4rem auto 8.75rem auto;
+    padding: 1rem auto 3.75rem auto;
   } 
 }

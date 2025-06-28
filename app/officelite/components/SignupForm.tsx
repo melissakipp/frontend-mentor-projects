@@ -50,7 +50,7 @@ export default function SignUpForm() {
         />
 
         <FormField
-          label='Email'
+          label='Email Address'
           name='email'
           type='email'
           register={register}

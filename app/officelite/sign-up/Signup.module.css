@@ -1,27 +1,35 @@
-.layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* space between colLeft and colRight */
-  padding: 1rem;
+.pageWrapper {
   background-color: var(--ol-colors-neutral-50);
-
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: visible; 
 }
 
-.colLeft { 
-  flex: 1;
+.contentContainer {
+  position: relative; 
+  width: 100%;
+  min-height: 100vh; 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--ol-spacing-500);
-  max-width: 69.375rem;
-  margin: var(--ol-spacing-100);
+  flex-direction: column; 
+  z-index: 1;
 }
 
-.colRight {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.contentContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--ol-colors-neutral-50) 0%,
+    var(--ol-colors-neutral-50) 50%,
+    var(--ol-colors-neutral-900) 50%,
+    var(--ol-colors-neutral-900) 100%
+  );
+  z-index: -1; /* Behind the content */
 }
 
 .title {
@@ -31,6 +39,34 @@
   font-weight: 700;
   line-height: 120%;
   text-align: center;
+  margin: var(--ol-spacing-300) auto;
+}
+
+.paragraph {
+  color: var(--ol-colors-neutral-500);
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 150%; /* 1.6875rem */
+} 
+
+/* Mobile layout first */
+.colLeft {
+  padding: 6rem 1.5rem 2rem; 
+  background-color: var(--ol-colors-neutral-50);
+  z-index: 2;
+}
+
+.colRight {
+  background-color: var(--ol-colors-neutral-900);
+  flex: 1; 
+  padding: 2rem 1.5rem;
+  z-index: 2;
+}
+
+.colLeft, .colRight {
+  width: 100%;
+  padding: 2rem 1rem;
 }
 
 .multiColorTitle::before {
@@ -42,11 +78,6 @@
   color: var(--ol-colors-blue-500);
 }
 
-.paragraph {
-  color: var(--ol-colors-neutral-500);
-  text-align: center;
-} 
-
 .block {
   margin: auto .5rem auto auto;
 }
@@ -55,29 +86,63 @@
   color: var(--ol-colors-neutral-800);
 }
 
-@media screen and (max-width: 767px) {
-  .title,
-  .paragraph {
-    text-align: center;
-  }
+.countdownWrapper {
+  margin-top: 2rem;
 }
 
+
+/* Desktop layout adjustments */
 @media screen and (min-width: 768px) {
-  .layout {
+  .pageWrapper::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%; 
+    height: 100vh; 
+    background-color: var(--ol-colors-neutral-900);
+    z-index: 0; /* Behind content */
+  }
+
+  .contentContainer {
     flex-direction: row;
-    align-items: flex-start;
+  }
+
+  .contentContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      var(--ol-colors-neutral-50) 0%,
+      var(--ol-colors-neutral-50) 50%,
+      var(--ol-colors-neutral-900) 50%,
+      var(--ol-colors-neutral-900) 100%
+    );
+    z-index: -1;
+    display: none; /* Hide on desktop */
+  }
+
+  .colLeft {
+    width: 50%;
+    padding: 8rem 3rem 3rem; 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 0 4rem; 
+  }
+  
+  .colRight {
+    width: 50%;
+    padding: 8rem 3rem 3rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .colLeft, .colRight {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .paragraph, .title {
+  .title, .paragraph {
     text-align: left;
   }
-
-  .title {font-size: 3.5rem;}
 }
