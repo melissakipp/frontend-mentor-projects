@@ -26,9 +26,9 @@ export default function Hero() {
         </div>
       </div>
       <div className={styles.colLeft}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           A simple solution to complex tasks is coming soon
-        </h2>
+        </h1>
         <p className={styles.description}>
           Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new collaboration platform built with an intuitive interface to improve productivity.
         </p>
