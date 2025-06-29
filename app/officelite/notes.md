@@ -1,3 +1,218 @@
+# Frontend Mentor - Officelite Coming Soon Site
+
+## Table of Contents
+- [Overview](#overview)
+- [The Challenge](#the-challenge)
+- [Built With](#built-with)
+- [Key Struggles & Solutions](#key-struggles--solutions)
+- [What I Learned](#what-i-learned)
+- [Continued Development](#continued-development)
+- [Useful Resources](#useful-resources)
+
+## Overview
+
+### The Challenge
+This was a Frontend Mentor 2-page "Coming Soon" site challenge that I integrated into my projects for portfolio site. The challenge involved building a responsive landing page with a countdown timer and sign-up form, focusing on modern Next.js development practices.
+
+Users should be able to:
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See a live countdown timer that ticks down every second
+- Submit their email address using an HTML form
+- See validation errors if the form is submitted without required information or with an invalid email address
+
+### Built With
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type safety and developer experience
+- **CSS Modules** - Scoped styling approach
+- **Jest** - Unit testing framework
+- **React Hook Form** - Form handling and validation
+
+## Key Struggles & Solutions
+
+### 1. Testing Environment Setup
+**The Problem:** Initial Jest setup created conflicts between Babel configuration and Next.js's native SWC compiler, causing font loading issues and build conflicts.
+
+**The Solution:** 
+- Created a Jest-specific Babel configuration with `babel-jest.config.js`
+- Allowed Next.js to continue using SWC for production builds
+- Established separate transform settings for test environment
+
+**Key Learning:** Modern Next.js applications can have complex build tool interactions. Separating concerns between test and production environments is crucial.
+
+### 2. Component Testing Alignment
+**The Problem:** Tests were failing due to mismatches between expected UI elements and actual component implementations, particularly around link text and form validation messages.
+
+**The Solution:**
+- Updated test assertions to match actual component output
+- Adjusted expectations from generic text like "sign up" to actual UI copy like "Try for Free"  
+- Implemented proper `act()` wrapping for React state updates in tests
+
+**Key Learning:** Test-driven development requires constant alignment between expected behavior and actual implementation. Tests should reflect user experience, not developer assumptions.
+
+### 3. Data Flow Architecture
+**The Problem:** Card components weren't properly receiving data from imported `cardData`, causing empty or broken component states.
+
+**The Solution:**
+- Fixed import paths and ensured correct TypeScript type definitions
+- Established clear data contracts between components and data sources
+- Created proper prop interfaces for type safety
+
+### 4. Complex CSS Layout Issues
+
+#### Card Centering Problem
+**The Problem:** Cards weren't centering properly on viewports below 1164px width.
+
+**The Solution:**
+```css
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+```
+
+#### Two-Tone Background Implementation
+**The Problem:** Creating a split-color background that spans full viewport height while maintaining responsive behavior.
+
+**The Solution:**
+```css
+.backgroundContainer::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: var(--color-primary);
+  z-index: -1;
+}
+
+.backgroundContainer::after {
+  content: '';
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: var(--color-secondary);
+  z-index: -1;
+}
+```
+
+### 5. Button Hover Effects
+**The Problem:** Button hover effects were causing layout shifts, creating a jarring user experience.
+
+**The Solution:**
+```css
+.button {
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--accent-color);
+  /* No layout shift because border space was already allocated */
+}
+```
+
+### 6. Scrolling and Height Issues
+**The Problem:** Fixed height constraints prevented proper scrolling on the sign-up page, especially on smaller screens.
+
+**The Solution:**
+- Changed from `height: 100vh` to `min-height: 100vh`
+- Adjusted positioning to allow content overflow
+- Implemented proper responsive height handling
+
+### 7. Double Scrollbar Issue
+**The Problem:** Integrating Officelite into the main project site caused vertical double scrollbars.
+
+**The Investigation:** This required systematic debugging of CSS properties including `max-width`, `overflow-x`, and parent container interactions.
+
+**Status:** Partially resolved through overflow property adjustments, but highlighted the complexity of integrating responsive components into existing layouts.
+
+### 8. Form State Management
+**The Problem:** Form state wasn't properly resetting after submission, leading to confusing UX.
+
+**The Solution:**
+```typescript
+const handleSubmit = (data: FormData) => {
+  // Process form submission
+  console.log('Form submitted:', data);
+  
+  // Reset form using React Hook Form
+  reset();
+  
+  // Show success feedback
+  setSubmitSuccess(true);
+};
+```
+
+## What I Learned
+
+### Technical Skills
+1. **Advanced CSS Techniques**: Mastered pseudo-elements for complex background effects and responsive layouts without JavaScript
+2. **Component Architecture**: Built truly reusable components with flexible prop interfaces
+3. **Testing Methodology**: Established robust testing workflows that work alongside modern Next.js features
+4. **Form Handling**: Implemented professional-grade form validation and user feedback systems
+
+### Development Practices
+1. **Integration Complexity**: Learned the challenges of integrating new components into existing systems vs. building standalone projects
+2. **Responsive Design Systems**: Gained experience with creating components that adapt to different design contexts
+3. **Debugging Workflows**: Developed systematic approaches to CSS layout debugging and testing environment troubleshooting
+
+### Problem-Solving Approach
+This project reinforced the importance of:
+- Breaking complex problems into smaller, testable pieces
+- Systematic debugging using browser dev tools and console logging
+- Maintaining clean separation between component logic and styling
+- Documenting solutions for future reference
+
+## Continued Development
+
+Areas I want to focus on in future projects:
+
+1. **Advanced Testing Patterns**: Explore more sophisticated Jest mocking strategies and integration testing approaches
+2. **CSS Architecture**: Develop more robust systems for managing complex responsive layouts
+3. **Component Libraries**: Build reusable component systems that can be easily integrated across projects
+4. **Performance Optimization**: Focus on Core Web Vitals and loading performance for Next.js applications
+
+## Useful Resources
+
+- [Next.js Testing Documentation](https://nextjs.org/docs/app/building-your-application/testing/jest) - Comprehensive guide for Jest setup with Next.js
+- [React Hook Form Documentation](https://react-hook-form.com/) - Excellent patterns for form validation and submission
+- [CSS Grid Complete Guide](https://css-tricks.com/snippets/css/complete-guide-grid/) - Reference for advanced layout techniques
+- [Frontend Mentor Community](https://www.frontendmentor.io/community) - Valuable feedback and alternative solution approaches
+
+## Reflections
+
+The Officelite project served as an excellent bridge between tutorial-level projects and real-world development challenges. The decision to integrate it into my existing portfolio site, while more complex, provided invaluable experience with:
+
+- Component integration strategies
+- CSS architecture at scale  
+- Testing in complex environments
+- Responsive design system thinking
+
+The struggles encountered—from testing environment conflicts to complex CSS layout issues—were all valuable learning experiences that improved my debugging skills and systematic problem-solving approach.
+
+Most importantly, this project demonstrated the value of maintaining detailed notes and documentation throughout the development process. The challenges faced here will inform better architectural decisions in future projects.
+
+---
+
+**Project Status:** ✅ Complete with minor polish remaining
+**Integration Status:** 🔄 Successfully integrated into portfolio site
+**Testing Status:** ✅ Full test coverage achieved
+**Responsive Status:** ✅ Mobile-first approach implemented
+
+
 # Countdown Customize Component
 by ChatGPT --> Claude.ai
 
