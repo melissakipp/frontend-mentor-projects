@@ -94,7 +94,7 @@ export default function SignUpForm() {
           borderStyle='bottom'
         />
 
-        <button type='submit' aria-label='Sign up' className={styles.submitButton}>
+        <button type='submit' aria-label='Submit sign up form' className={styles.submitButton}>
           Get on the list
         </button>
       </form>
