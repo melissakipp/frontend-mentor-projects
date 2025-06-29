@@ -31,8 +31,8 @@ export default function page() {
     </main>
     <footer>
       <PersonalFooter
-        mySolution=""
-        projectNotes="ttps://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/notes.md"
+        mySolution="https://frontend-mentor-projects-rho.vercel.app/officelite"
+        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/notes.md"
         projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/README.md"
       />
     </footer>
