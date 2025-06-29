@@ -15,7 +15,7 @@
   } 
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   .headerContainer {
     max-width: 1440px;
     padding: 1rem auto 3.75rem auto;

@@ -71,7 +71,7 @@
 }
 
 /* Desktop layout */
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .container {
     flex-direction: row; /* Switch to side-by-side on desktop */
     text-align: left; /* Left align text on desktop */
@@ -102,7 +102,7 @@
 }
 
 /* Tablet breakpoint if needed */
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 640px) and (max-width: 999px) {
   .container {
     padding: 3rem 2rem;
   }
