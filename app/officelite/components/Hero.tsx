@@ -12,7 +12,7 @@ export default function Hero() {
           <Image 
             className={styles.heroImg}
             src={HeroImage}
-            alt="Officelite Hero Image"
+            alt="Illustration showing data charts and analytics for the Officelite platform"
             width={470}
             height={300}
             sizes="
