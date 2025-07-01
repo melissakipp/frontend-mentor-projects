@@ -1,3 +1,6 @@
+import SearchBar from './components/SearchBar';
+import Card from './components/APIcard';
+
 import styles from './styles/page.module.css';
 
 export default function GitHubUserSearchPage() {
@@ -8,7 +11,8 @@ export default function GitHubUserSearchPage() {
         Search for GitHub users by their username and view relevant profile data. 
         This project was built as part of a Frontend Mentor challenge to practice working with APIs.
       </p>
-      {/* Insert your search component and user profile display component here */}
+      <SearchBar />
+      <Card />
     </main>
   );
 }
