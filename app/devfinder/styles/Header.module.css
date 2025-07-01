@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.title {
+  color: var(--text-neutral-900);
+  font-size: var(--text-size-1);
+  font-weight: 700;
+  line-height: var(--text-line-height-1-3);
+}
