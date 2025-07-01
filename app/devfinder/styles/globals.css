@@ -3,8 +3,63 @@
   --font-weight-bold: 700;
   --font-style-normal: normal;
   --font-style-italic: italic;
+
+  --neutral-900: #141D2F;
+  --neutral-800: #1E2A47;
+  --neutral-700: #2B3442;
+  --neutral-500: #4B6A9B;
+  --neutral-300: #697C9A;
+  --neutral-200: #90A4D4;
+  --neutral-100: #F6F8FF;
+  --neutral-0: #FFFFFF;
+
+  --blue-300: #60ABFF;
+  --blue-500: #0079FF;
+
+  --red-500: #F74656;
+
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 64px;
+  --spacing-800: 80px;
+
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+
+  --text-size-1: 26px;
+  --text-size-2: 22px;
+  --text-size-3: 18px;
+  --text-size-4: 13px;
+  --text-size-5: 16px;
+  --text-size-6: 15px;
+  --text-size-7: 13px;
+  --text-size-8: 13px;
+
+  --text-line-height-1-3: 140%;
+  --text-line-height-4-7: 150%;
+  --text-line-height-8: 140%;
+
+  --text-letter-spacing-8: 2.5px; 
 }
 
 .main {
   height: 100vh;
 }
+ 
