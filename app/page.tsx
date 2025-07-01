@@ -46,6 +46,13 @@ const projects: Project[] = [
     description: 'Build a responsive 2-page coming soon website with form validation, countdown timer, and custom form controls.',
     image: '/images/officelite/officelite-preview.png',
     path: '/officelite'
+  },
+  {
+    id: 'devfinder',
+    title: 'DevFinder',
+    description: 'Build a responsive GitHub user search application with light and dark themes.',
+    image: '/under-construction_ChatGPT-Image.png',
+    path: '/devfinder'
   }
 ];
 
