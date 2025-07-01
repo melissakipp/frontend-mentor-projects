@@ -1,4 +1,10 @@
+:root {
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-style-normal: normal;
+  --font-style-italic: italic;
+}
+
 .main {
-  background-color: aquamarine;
   height: 100vh;
 }

@@ -1,35 +1,46 @@
 import type { Metadata } from 'next';
-import { Overpass } from 'next/font/google';
+import { Space_Mono } from 'next/font/google';
 import './styles/globals.css';
 
-// Load and configure the Overpass font
-const overpass = Overpass({
+const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Melissa Kipp | Frontend Mentor Challenges',
-    template: 'Melissa Kipp | %s',
+    default: 'GitHub User Search App | Melissa Kipp',
+    template: '%s | GitHub User Search App',
   },
-  description: 'Explore my web development projects, UX/UI case studies, and digital design work.',
+  description:
+    'Search for GitHub users by username, view their profile data, and switch between light and dark themes in this Frontend Mentor challenge.',
   openGraph: {
-    title: 'Biweekly Frontend Mentor Challenges',
-    description: 'Explore my web development projects, UX/UI case studies, and digital design work.',
-    url: 'https://frontend-mentor-projects-rho.vercel.app/',
+    title: 'GitHub User Search App | Frontend Mentor Challenge',
+    description:
+      'Search for GitHub users by username, view their profile data, and switch between light and dark themes in this Frontend Mentor challenge.',
+    url: 'https://frontend-mentor-projects-rho.vercel.app/github-search-preview',
     siteName: 'Melissa Kipp | Web Developer',
     images: [
       {
-        url: 'https://frontend-mentor-projects-rho.vercel.app/og-image.jpg',
+        url: 'https://frontend-mentor-projects-rho.vercel.app/github-search-preview.jpg',
         width: 1200,
         height: 630,
-        alt: 'Preview of Melissa\'s Frontend Mentor challenge website',
+        alt: 'Screenshot of GitHub User Search App by Melissa Kipp',
       },
     ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GitHub User Search App | Frontend Mentor Challenge',
+    description:
+      'Search for GitHub users by username, view their profile data, and switch between light and dark themes in this Frontend Mentor challenge.',
+    images: [
+      'https://frontend-mentor-projects-rho.vercel.app/github-search-preview.jpg',
+    ],
   },
 };
 
@@ -39,8 +50,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={overpass.className}>{children}</body>
-    </html>
+    <div className={spaceMono.className}>{children}</div>
   );
 }
