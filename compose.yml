@@ -9,4 +9,4 @@ services:
       - ./:/home/nextjs/app
     environment:
       - NODE_ENV=development
-    command: npm run dev
+    command: pnpm dev
