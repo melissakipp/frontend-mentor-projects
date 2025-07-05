@@ -103,11 +103,6 @@ body {
   overflow-x: hidden;
 }
 
-/* a {
-  color: inherit;
-  text-decoration: none;
-} */
-
 .backBanner {
   margin: 1rem;
   padding: 1rem;
@@ -117,20 +112,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-  height: 5.25rem;
+.personalFooter {
   text-align: center;
-  margin: 4rem auto auto auto;
 }
 
-footer a {
-  color: var(--primary-neutral-gray);
-  text-decoration: underline;
-}
 
-footer a:hover {
-  color: var(--primary-soft-red);
-}
 
 @media (prefers-color-scheme: dark) {
   html {

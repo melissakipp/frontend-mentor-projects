@@ -29,13 +29,11 @@ export default function page() {
         />
       </div>
     </main>
-    <footer>
-      <PersonalFooter
-        mySolution="https://frontend-mentor-projects-rho.vercel.app/officelite"
-        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/notes.md"
-        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/README.md"
-      />
-    </footer>
+    <PersonalFooter
+      mySolution="https://frontend-mentor-projects-rho.vercel.app/officelite"
+      projectNotes="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/notes.md"
+      projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/officelite/README.md"
+    />
     </>
   );
 }

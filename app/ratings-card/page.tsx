@@ -17,14 +17,12 @@ export default function RatingsCardPage() {
         <RatingCard onRatingSubmit={handleRatingSubmit} />
       </main>
     </div>
-    <footer>
-      <PersonalFooter 
-        mySolution="https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-1EhXUnKW7h"
-        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/ratings-card/notes.md"
-        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/ratings-card/README.md"
-        
-      />
-    </footer>
+    <PersonalFooter 
+      mySolution="https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-1EhXUnKW7h"
+      projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/ratings-card/notes.md"
+      projectReadme="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/ratings-card/README.md"
+      
+    />
     </>
   );
 }

@@ -62,13 +62,11 @@ export default function ProductPreviewCard() {
     <main className="main__content">
       <ProductCardPreview />
     </main>
-    <footer>
-      <PersonalFooter
-        mySolution="https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY"
-        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/product-preview-card/notes.md"
-        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/product-preview-card/README.md"
-      />
-    </footer>
+    <PersonalFooter
+      mySolution="https://www.frontendmentor.io/solutions/product-preview-card-solution-2bLFm2ApdY"
+      projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/product-preview-card/notes.md"
+      projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/product-preview-card/README.md"
+    />
     </>
 
   );

@@ -145,13 +145,11 @@ export default function BaseApparel() {
       <Aside />
       <Main />
     </div>
-    <footer>
-      <PersonalFooter
-        mySolution="https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-1EhXUnKW7h"
-        projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md"
-        projectReadme="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md"
-      />
-    </footer>
+    <PersonalFooter
+      mySolution="https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-1EhXUnKW7h"
+      projectNotes="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/notes.md"
+      projectReadme="https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/base-apparel/README.md"
+    />
     </>
   );
 }
