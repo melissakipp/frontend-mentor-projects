@@ -9,7 +9,13 @@ export default function Header() {
     <header className={styles.headerContainer}>
       {/* Logo */}
       <Link href="/officelite" className={styles.logo}>
-        <Image className={styles.logoImg} src={Logo} alt="Snap Logo" priority />
+        <Image 
+          width={140}
+          height={30}
+          className={styles.logoImg} 
+          src={Logo} alt="Snap Logo" 
+          priority 
+        />
       </Link>
     </header>
   );
