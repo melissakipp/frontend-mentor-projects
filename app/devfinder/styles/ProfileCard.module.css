@@ -139,8 +139,17 @@
     align-items: center;
   }
 
-  .headerContent {
+  .cardHeader {
     grid-area: headerContent;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr fit-content;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'name joinDate'
+      'username .'
+    ;
+    margin-left: var(--spacing-150, 12px); 
   }
 
   .bio {

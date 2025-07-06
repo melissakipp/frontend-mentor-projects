@@ -40,16 +40,16 @@ export default function ProfileCard({ user }: ProfileCardProps) {
   return (
     <article className={styles.card}>
       {user.avatar_url ? (
-          <Image
-            className={styles.avatar}
-            src={user.avatar_url}
-            alt={`${user.login}'s avatar`}
-            width={117}
-            height={117}
-          />
-        ) : (
-          <div className={styles.avatarPlaceholder}>Not Available</div>
-        )}
+        <Image
+          className={styles.avatar}
+          src={user.avatar_url}
+          alt={`${user.login}'s avatar`}
+          width={117}
+          height={117}
+        />
+      ) : (
+        <div className={styles.avatarPlaceholder}>Not Available</div>
+      )}
 
       <header className={styles.cardHeader}>
         <h2 className={styles.name}>{user.name?.trim() || 'Not Available'}</h2>
