@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import styles from "./MainContent.module.css";
 import Testmonials from "./Testmonials";
-import HeroMobileImg from '@/../public/images/dropdown-nav/image-hero-mobile.png';
-import HeroDesktopImg from '@/../public/images/dropdown-nav/image-hero-desktop.png';
+import HeroMobileImg from '../../../public/images/dropdown-nav/image-hero-mobile.png';
+import HeroDesktopImg from '../../../public/images/dropdown-nav/image-hero-desktop.png';
 
 
 export default function MainContent() {
