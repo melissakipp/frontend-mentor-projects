@@ -38,44 +38,6 @@
   border: 0;
 }
 
-/* CSS Reset */
-/* * {
-  margin: 0;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-input,
-button {
-  font: inherit;
-}
-
-html {
-  color: var(--tertiary-color);
-  font-family: var(--primary-font);
-  font-optical-sizing: var(--font-optical);
-  font-size: var(--font-size);
-  font-style: var(--primary-font-style);
-  font-weight: var(--base-font-weight);
-  line-height: var(--base-line-height);
-  font-variation-settings:
-    "SOFT" 0,
-    "WONK" 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-  font-weight: var(--bold-font-weight);
-}
-
-img {
-  width: 100%;
-  height: auto;
-} */
-
-
 .main__content {
   background-color: var(--secondary-color);
   display: grid;
