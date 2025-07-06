@@ -2,14 +2,14 @@ import { allDocs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import MDXContent from '@/app/components/MDXContent';
 
+// New way (Next.js 15)
 interface DocPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function DocPage({ params }: DocPageProps) {
-  const slug = params.slug;
+// New way (Next.js 15)
+export default async function DocPage({ params }: DocPageProps) {
+  const { slug } = await params;
   const doc = allDocs.find((doc) => doc.slug === slug);
 
   if (!doc) notFound();

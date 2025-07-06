@@ -14,7 +14,6 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   pageExtensions: ['js', 'ts', 'jsx', 'tsx', 'md', 'mdx'],
   images: {
     domains: [],
