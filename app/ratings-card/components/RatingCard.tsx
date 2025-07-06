@@ -3,6 +3,7 @@
 import React, { useState, useRef, FormEvent, useEffect } from 'react';
 import styles from './RatingCard.module.css';
 import { Rating, RatingCardProps } from './types';
+import Image from 'next/image';
 
 /**
  * Interactive Rating Component
@@ -86,7 +87,7 @@ export default function RatingCard({
         <form ref={formRef} onSubmit={handleSubmission} aria-label="Rating form">
           <section className={styles.card}>
             <div className={styles.card__icon_background}>
-              <img src="/images/ratings-card/icon-star.svg" aria-hidden="true" alt="" className={styles.card__icon} />
+              <Image src="/images/ratings-card/icon-star.svg" aria-hidden="true" alt="" className={styles.card__icon} />
             </div>
             
             <div className={styles.card__container}>
@@ -122,7 +123,7 @@ export default function RatingCard({
         </form>
       ) : (
         <section className={styles.thank_you}>
-          <img 
+          <Image
             src="/images/ratings-card/illustration-thank-you.svg" 
             alt="Thank you illustration" 
             className={styles.thank_you__image} 
