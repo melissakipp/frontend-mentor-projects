@@ -1,4 +1,4 @@
-.container {
+.searchForm {
   width: 100%;
   padding: var(--spacing-400, 2rem) var(--spacing-200, 1rem);
   border-radius: var(--corner-radius-16, 1rem);
