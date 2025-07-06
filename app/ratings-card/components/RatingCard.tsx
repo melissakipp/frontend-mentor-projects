@@ -11,11 +11,11 @@ import Image from 'next/image';
  * A component that allows users to select a rating from 1-5 and submit feedback
  */
 export default function RatingCard({
-  title = "How did we do?",
-  description = "Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!",
+  title = 'How did we do?',
+  description = 'Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!',
   onRatingSubmit,
   initialRating = null,
-  thankYouMessage = "We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!"
+  thankYouMessage = 'We appreciate you taking the time to give a rating. If you ever need more support, don\'t hesitate to get in touch!'
 }: RatingCardProps): React.ReactElement {
   // State management with typed variables
   const [selectedRating, setSelectedRating] = useState<Rating>(initialRating);
@@ -84,10 +84,10 @@ export default function RatingCard({
   return (
     <div className={styles.card__wrapper}>
       {!isSubmitted ? (
-        <form ref={formRef} onSubmit={handleSubmission} aria-label="Rating form">
+        <form ref={formRef} onSubmit={handleSubmission} aria-label='Rating form'>
           <section className={styles.card}>
             <div className={styles.card__icon_background}>
-              <Image src="/images/ratings-card/icon-star.svg" aria-hidden="true" alt="" className={styles.card__icon} />
+              <Image src='/images/ratings-card/icon-star.svg' aria-hidden='true' alt='' className={styles.card__icon} />
             </div>
             
             <div className={styles.card__container}>
@@ -95,15 +95,15 @@ export default function RatingCard({
               <p className={styles.card__description}>{description}</p>
             </div>
 
-            <div className={styles.rating} role="radiogroup" aria-label="Rating options">
+            <div className={styles.rating} role='radiogroup' aria-label='Rating options'>
               {ratings.map((rating) => (
                 <button
                   key={rating}
-                  type="button"
+                  type='button'
                   className={`${styles.rating__button} ${selectedRating === rating ? styles.rating__button_selected : ''}`}
                   aria-label={`Rate ${rating} out of 5`}
                   aria-checked={selectedRating === rating}
-                  role="radio"
+                  role='radio'
                   onClick={() => handleRatingSelection(rating)}
                 >
                   {rating}
@@ -114,7 +114,7 @@ export default function RatingCard({
             <button 
               ref={submitButtonRef}
               className={styles.submit} 
-              type="submit"
+              type='submit'
               disabled={!selectedRating}
             >
               Submit
@@ -124,8 +124,8 @@ export default function RatingCard({
       ) : (
         <section className={styles.thank_you}>
           <Image
-            src="/images/ratings-card/illustration-thank-you.svg" 
-            alt="Thank you illustration" 
+            src='/images/ratings-card/illustration-thank-you.svg' 
+            alt='Thank you illustration' 
             className={styles.thank_you__image} 
           />
           <p className={styles.thank_you__rating}>
@@ -135,9 +135,9 @@ export default function RatingCard({
           <p className={styles.card__description}>{thankYouMessage}</p>
           <button 
             className={styles.reset_button} 
-            type="button" 
+            type='button' 
             onClick={resetRating}
-            aria-label="Rate again"
+            aria-label='Rate again'
           >
             Rate again
           </button>
