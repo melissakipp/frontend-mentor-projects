@@ -2,9 +2,6 @@ import Image from 'next/image';
 
 import styles from './MainContent.module.css';
 import Testmonials from './Testmonials';
-import HeroMobileImg from '../../../public/images/dropdown-nav/image-hero-mobile.png';
-import HeroDesktopImg from '../../../public/images/dropdown-nav/image-hero-desktop.png';
-
 
 export default function MainContent() {
   return (
@@ -13,11 +10,11 @@ export default function MainContent() {
         <picture>
           <source
             media='(min-width: 1024px)'
-            srcSet={HeroDesktopImg.src}
+            srcSet='images/dropdown-nav/image-hero-desktop.png'
           />
           <Image
             className={styles.heroImg}
-            src={HeroMobileImg}
+            src='images/dropdown-nav/image-hero-mobile.png'
             alt='Illustration'
             width={500}
             height={500}
