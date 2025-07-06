@@ -21,6 +21,7 @@ function ProductCardPreview() {
             alt="Gabrielle Essense perfume bottle laying flat on a table with green leaves above and below it"
             width={600}
             height={600}
+            priority={true}
           />
         </picture>
         <figcaption className="sr-only">Perfume bottle laying on a table with green foliage around the bottle.</figcaption>
