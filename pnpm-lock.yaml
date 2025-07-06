@@ -96,6 +96,9 @@ importers:
       jest-svg-transformer:
         specifier: ^1.0.0
         version: 1.0.0(jest@30.0.4(@types/node@22.16.0))(react@19.1.0)
+      node-fetch:
+        specifier: ^3.3.2
+        version: 3.3.2
       ts-jest:
         specifier: ^29.4.0
         version: 29.4.0(@babel/core@7.28.0)(@jest/transform@30.0.4)(@jest/types@30.0.1)(babel-jest@30.0.4(@babel/core@7.28.0))(esbuild@0.25.5)(jest-util@30.0.2)(jest@30.0.4(@types/node@22.16.0))(typescript@5.8.3)

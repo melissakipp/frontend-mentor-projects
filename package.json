@@ -42,6 +42,7 @@
     "jest-date-mock": "^1.0.10",
     "jest-environment-jsdom": "^30.0.2",
     "jest-svg-transformer": "^1.0.0",
+    "node-fetch": "^3.3.2",
     "ts-jest": "^29.4.0",
     "typescript": "^5",
     "vitest": "^3.2.4"

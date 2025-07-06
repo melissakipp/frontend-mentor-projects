@@ -1,7 +1,167 @@
 .card {
   width: 100%;
-  border-radius: var(--corner-radius-16, 1rem);
+  max-width: 730px;
+  margin: 0 auto;
+  border-radius: var(--radius-16, 1rem);
   padding: var(--spacing-400, 2rem) var(--spacing-200, 1rem);
-  background: var(--colors-neutral-0, #FFF);
+  background: var(--neutral-0, #FFF);
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    'avatar headerContent'
+    'bio bio'
+    'statsList statsList'
+    'cardFooter cardFooter'
+  ;
+  gap: var(--spacing-300, 24px);
+}
+
+.avatar {
+  grid-area: avatar;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.cardHeader {
+  grid-area: headerContent;
+  align-self: center;
+  margin-left: var(--spacing-150, 12px);
+}
+
+.name {
+  font-size: var(--text-size-1, 26px);
+  font-weight: 700;
+  color: var(--neutral-800, #2B3442);
+  line-height: 120%;
+  margin: 0;
+}
+
+.username {
+  font-size: 1rem;
+  color: var(--blue-500, #0079FF);
+  font-weight: 400;
+  line-height: var(--text-line-height-4-7);
+  margin: 0;
+}
+
+.joinDate {
+  font-size: var(--text-size-6, 15px);
+  color: var(--neutral-500, #4B6A9B);
+  font-weight: 400;
+  line-height: var(--text-line-height-4-7);
+  margin: 0;
+}
+
+.bio {
+  grid-area: bio;
+  font-size: var(--text-size-5, 16px);
+  color: var(--neutral-700, #2B3442);
+  font-weight: 400;
+  line-height: var(--text-line-height-4-7);
+  margin: 0;
+  width: 100%;
+}
+
+.statsList {
+  grid-area: statsList;
+  list-style: none;
+  padding: var(--spacing-250, 1.5rem) var(--spacing-200, 1rem);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200, 1rem);
+  background-color: var(--colors-neutral-100, #F6F8FF);
+  border-radius: var(--radius-10, 10px);
+  width: 100%;
+}
+
+.statLabel {
+  font-size: var(--text-size-7, 13px);
+  font-weight: 400;
+  color: var(--neutral-500, #4B6A9B);
+  margin-bottom: var(--spacing-050, 0.25rem);
+}
+
+.reposStats, .statCount {
+  font-size: var(--text-size-2, 22px);
+  font-weight: 700;
+  color: var(--neutral-700, #2B3442);
+}
+
+.cardFooter {
+  grid-area: cardFooter;
+  width: 100%;
+}
+
+.footerList {
+  list-style: none;
+  padding: 0
+}
+
+.footerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: var(--spacing-200, 16px) 0;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.footerLink {
+  color: var(--blue-500, #0079FF);
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* Tablet and Desktop (>768px) */
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: fit-content 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+      'avatar headerContent'
+      '. bio'
+      '. statsList'
+      '. cardFooter'
+    ;
+  }
+
+  .avatar {
+    grid-area: avatar;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerContent {
+    grid-area: headerContent;
+  }
+
+  .bio {
+    grid-area: bio;
+    width: 100%;
+  }
+
+  .statsList {
+    grid-area: statsList;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cardFooter {
+    grid-area: cardFooter;
+  }
+
+  .footerList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-200, 1rem);
+  }
 }
