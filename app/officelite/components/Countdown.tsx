@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import styles from './Countdown.module.css';
 
@@ -133,7 +133,9 @@ export default function Countdown({
   srOnlyClassName = 'sr-only',
 }: CountdownProps) {
   const [hasMounted, setHasMounted] = useState(false);
-  const parsedTargetDate = typeof targetDate === 'string' ? new Date(targetDate) : targetDate;
+  const parsedTargetDate = useMemo(() => {
+    return typeof targetDate === 'string' ? new Date(targetDate) : targetDate;
+  }, [targetDate]);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(parsedTargetDate));
 
   useEffect(() => {
