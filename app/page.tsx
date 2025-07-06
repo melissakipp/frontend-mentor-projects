@@ -81,6 +81,7 @@ export default function Home() {
                   width={300}
                   height={200}
                   className={styles.cardImage}
+                  priority={true}
                 />
               </div>
               <div className={styles.cardContent}>
