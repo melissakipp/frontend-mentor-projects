@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import styles from './Hero.module.css';
-import HeroImage from '../../../public/images/officelite/home/illustration-charts.svg';
 
 export default function Hero() {
   return (
@@ -11,7 +10,7 @@ export default function Hero() {
         <div className={styles.imageWrapper}>
           <Image 
             className={styles.heroImg}
-            src={HeroImage}
+            src='images/officelite/home/illustration-charts.svg'
             alt="Illustration showing data charts and analytics for the Officelite platform"
             width={470}
             height={300}
@@ -21,7 +20,7 @@ export default function Hero() {
               200px
             "
             style={{ objectFit: 'cover' }}
-            priority 
+            priority={true}
           />
         </div>
       </div>
