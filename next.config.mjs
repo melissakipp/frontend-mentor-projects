@@ -24,7 +24,10 @@ const nextConfig = {
         hostname: 'avatars.githubusercontent.com',
       },
     ],
+    unoptimized: process.env.NODE_ENV === 'development', // Optional: disable optimization in dev
   },
+  // Make sure assets in public directory are properly served
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://frontend-mentor-projects-rho.vercel.app' : '',
   webpack: (config, { isServer }) => {
     config.watchOptions = {
       poll: 1000,
