@@ -87,7 +87,14 @@ export default function RatingCard({
         <form ref={formRef} onSubmit={handleSubmission} aria-label='Rating form'>
           <section className={styles.card}>
             <div className={styles.card__icon_background}>
-              <Image src='/images/ratings-card/icon-star.svg' aria-hidden='true' alt='' className={styles.card__icon} />
+              <Image 
+                src='/images/ratings-card/icon-star.svg' 
+                aria-hidden='true' 
+                alt='' 
+                className={styles.card__icon} 
+                width={24}
+                height={24}
+              />
             </div>
             
             <div className={styles.card__container}>
