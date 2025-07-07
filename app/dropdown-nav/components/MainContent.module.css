@@ -61,8 +61,24 @@
   color: var(--rw-black);
 }
 
+.mobileOnly {
+  display: block;
+}
+
+.desktopOnly {
+  display: none;
+}
+
 /* Desktop layout (two columns) */
 @media (min-width: 1024px) {
+  .mobileOnly {
+    display: none;
+  }
+  
+  .desktopOnly {
+    display: block;
+  }
+  
   .main {
     display: grid;
     grid-template-columns: 1fr 1fr;

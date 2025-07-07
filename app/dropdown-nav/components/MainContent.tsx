@@ -3,24 +3,34 @@ import Image from 'next/image';
 import styles from './MainContent.module.css';
 import Testmonials from './Testmonials';
 
+import mobileHero from '../../../public/images/dropdown-nav/image-hero-mobile.png';
+import desktopHero from '../../../public/images/dropdown-nav/image-hero-desktop.png';
+
 export default function MainContent() {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <picture>
-          <source
-            media='(min-width: 1024px)'
-            srcSet='/images/dropdown-nav/image-hero-desktop.png'
-          />
-          <Image
-            className={styles.heroImg}
-            src='/images/dropdown-nav/image-hero-mobile.png'
-            alt='Illustration'
-            width={500}
-            height={500}
-            priority={true}
-          />
-        </picture>   
+        <div className={styles.imageWrapper}>
+          {/* Hide on desktop */}
+          <div className={styles.mobileOnly}>
+            <Image
+              className={styles.heroImg}
+              src={mobileHero}
+              alt='Illustration'
+              priority={true}
+            />
+          </div>
+          
+          {/* Hide on mobile */}
+          <div className={styles.desktopOnly}>
+            <Image
+              className={styles.heroImg}
+              src={desktopHero}
+              alt='Illustration'
+              priority={true}
+            />
+          </div>
+        </div>
       </section>
       <section className={`${styles.pageText} ${styles.leftCol}`}>
         <h1 className='sr-only'>Snap Home page</h1>
