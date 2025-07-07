@@ -21,9 +21,6 @@ export default function Hero() {
             "
             style={{ objectFit: 'cover' }}
             priority={true}
-            onError={(e) => {
-              console.error(`Failed to load image: ${'/images/officelite/home/illustration-charts.svg'}`);
-            }}
           />
         </div>
       </div>
