@@ -18,7 +18,7 @@ export default function MainContent() {
             alt='Illustration'
             width={500}
             height={500}
-            priority
+            priority={true}
           />
         </picture>   
       </section>
