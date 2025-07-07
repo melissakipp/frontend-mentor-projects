@@ -16,42 +16,42 @@ const projects: Project[] = [
     id: 'base-apparel',
     title: 'Base Apparel',
     description: 'Coming soon page with email validation',
-    image: 'images/base-apparel/base-apparel-preview.png',
+    image: '/images/base-apparel/base-apparel-preview.png',
     path: '/base-apparel'
   },
   {
     id: 'product-preview-card',
     title: 'Product Preview Card',
     description: 'Responsive product card component',
-    image: 'images/product-preview/screenshot_desktop.png',
+    image: '/images/product-preview/screenshot_desktop.png',
     path: '/product-preview-card'
   },
   {
     id: 'ratings-card',
     title: 'Interactive Rating Component',
     description: 'User feedback component with rating selection',
-    image: 'images/ratings-card/rating-card-preview.png',
+    image: '/images/ratings-card/rating-card-preview.png',
     path: '/ratings-card'
   },
   {
     id: 'dropdown-nav',
     title: 'Intro section with dropdown navigation',
     description: 'Responsive with accessible dropdown and frontend interaction testing',
-    image: 'images/dropdown-nav/dropdown-nav-preview.png',
+    image: '/images/dropdown-nav/dropdown-nav-preview.png',
     path: '/dropdown-nav'
   },
   {
     id: 'officelite',
     title: 'Officelite coming soon site',
     description: 'Build a responsive 2-page coming soon website with form validation, countdown timer, and custom form controls.',
-    image: 'images/officelite/officelite-preview.png',
+    image: '/images/officelite/officelite-preview.png',
     path: '/officelite'
   },
   {
     id: 'devfinder',
     title: 'DevFinder',
     description: 'Build a responsive GitHub user search application with light and dark themes.',
-    image: 'under-construction_ChatGPT-Image.png',
+    image: '/under-construction_ChatGPT-Image.png',
     path: '/devfinder'
   }
 ];
