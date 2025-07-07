@@ -82,6 +82,9 @@ export default function Home() {
                   height={200}
                   className={styles.cardImage}
                   priority={true}
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${project.image}`);
+                  }}
                 />
               </div>
               <div className={styles.cardContent}>

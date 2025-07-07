@@ -10,7 +10,7 @@ export default function Hero() {
         <div className={styles.imageWrapper}>
           <Image 
             className={styles.heroImg}
-            src='images/officelite/home/illustration-charts.svg'
+            src='/images/officelite/home/illustration-charts.svg'
             alt="Illustration showing data charts and analytics for the Officelite platform"
             width={470}
             height={300}
@@ -21,6 +21,9 @@ export default function Hero() {
             "
             style={{ objectFit: 'cover' }}
             priority={true}
+            onError={(e) => {
+              console.error(`Failed to load image: ${'/images/officelite/home/illustration-charts.svg'}`);
+            }}
           />
         </div>
       </div>
