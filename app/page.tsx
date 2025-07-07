@@ -16,7 +16,7 @@ const projects: Project[] = [
     id: 'base-apparel',
     title: 'Base Apparel',
     description: 'Coming soon page with email validation',
-    image: '/base-apparel/base-apparel-preview.png',
+    image: '/images/base-apparel/base-apparel-preview.png',
     path: '/base-apparel'
   },
   {

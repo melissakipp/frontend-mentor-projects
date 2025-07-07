@@ -1,35 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-input,
-button {
-  font: inherit;
-}
-
-html {
-  font-family: var(--ba-primary-font);
-  font-optical-sizing: var(--ba-font-optical);
-  font-size: var(--ba-font-size);
-  font-style: var(--ba-primary-font-style);
-  font-weight: var(--ba-base-font-weight);
-  line-height: var(--ba-base-line-height);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: var(--ba-bold-font-weight);
-}
-
-body {
-  background: var(--ba-light-gradient)
-}
-
-header {
-  height: 10.5vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
-
 .logo {
   max-width: 150px;
 }
@@ -43,19 +11,19 @@ header {
   margin: 2rem;
 }
 
-.call-out {
+.callOut {
   font-size: 2.5rem;
   letter-spacing: 0.67rem;
   line-height: 1.15;
   text-transform: uppercase;
 }
 
-.ann-one {
+.annOne {
   font-weight: var(--ba-thin-font-weight);
   color: var(--ba-primary-color);
 }
 
-.ann-two {
+.annTwo {
   font-weight: var(--ba-bold-font-weight);
   color: var(--ba-primary-neutral-gray);
 }
@@ -67,12 +35,12 @@ header {
   margin: 1rem 0 2rem 0;
 }
 
-.form-layout {
+.formLayout {
   margin: auto auto 2rem auto;
   width: 100%;
 }
 
-.form-control {
+.formControl {
   border: none;
   width: 100%;
   position: relative;
@@ -95,7 +63,7 @@ header {
   opacity: 0.5;
 }
 
-form button {
+.submitButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,6 +76,7 @@ form button {
   width: 64px;
   height: 48px;
   right: 0px;
+  position: absolute;
 }
 
 .arrow {
@@ -115,27 +84,21 @@ form button {
   height: 22px;
 }
 
-.error-icon, button {
+.errorIcon {
   position: absolute;
-}
-
-.error-icon {
   right: 70px;
+  display: none;
 }
 
-.error-message {
+.errorMessage {
   color: var(--ba-primary-soft-red);
   font-size: var(--ba-error-font-size);
   text-align: left;
   margin: .25rem auto auto 1rem;
-}
-
-.error-icon,
-.error-message {
   display: none;
 }
 
-.success-message {
+.successMessage {
   background-color: white;
   border-radius: 28px;
   box-shadow: var(--ba-box-shadow-color) 0px 5px 15px;
@@ -145,60 +108,53 @@ form button {
   margin: 2rem auto;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 7.5vh 2fr;
+  grid-template-areas:
+    "header aside"
+    "main aside";
+  height: 80vh;
+}
+
+.header {
+  grid-area: header;
+  width: 100%;
+  margin: auto auto auto calc(33vw - 222.5px);
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 445px;
+  margin: auto;
+}
+
+.hero {
+  grid-area: aside;
+}
+
 @media (min-width: 600px) {
-
-  .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 7.5vh 2fr ;
-    grid-template-areas:
-      "header aside"
-      "main aside";
-    height: 80vh;
-  }
-
-  .header {
-    grid-area: header;
-    width: 100%;
-    margin: auto auto auto calc(33vw - 222.5px);
-  }
-
-  .main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 445px;
-    margin: auto;
-  }
-
   .announcement {
     text-align: left;
     align-items: center;
   }
 
-  .announcement h2 {
+  .callOut {
     font-size: 4rem;
   }
 
-
-  .hero {
-    grid-area: aside;
-  }
-
-  .input {
-    padding: .75rem;
-  }
-
-  .form-layout button {
+  .submitButton {
     width: 6rem;
     height: 3rem;
     padding: .75rem;
   }
 
-  .icon {
+  .errorIcon {
     right: 105px;
   }
-
 }
