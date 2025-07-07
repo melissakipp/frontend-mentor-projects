@@ -10,7 +10,7 @@ export default function MainContent() {
         <picture>
           <source
             media='(min-width: 1024px)'
-            srcSet='images/dropdown-nav/image-hero-desktop.png'
+            srcSet='/images/dropdown-nav/image-hero-desktop.png'
           />
           <Image
             className={styles.heroImg}
