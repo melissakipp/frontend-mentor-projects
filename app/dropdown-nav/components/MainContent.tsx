@@ -14,7 +14,7 @@ export default function MainContent() {
           />
           <Image
             className={styles.heroImg}
-            src='images/dropdown-nav/image-hero-mobile.png'
+            src='/images/dropdown-nav/image-hero-mobile.png'
             alt='Illustration'
             width={500}
             height={500}
