@@ -24,8 +24,6 @@
   width: 80vw;
   display: flex;
   justify-content: center;
-
-  outline: 2px solid blue;
 }
 
 .heroImg {
