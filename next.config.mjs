@@ -11,17 +11,22 @@ const withMDX = createMDX({
   extension: /\.mdx?$/
 });
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'ts', 'jsx', 'tsx', 'md', 'mdx'],
   images: {
-    domains: [],
+    domains: [], // Keep empty - using remotePatterns instead
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/melissakipp/**',
       },
     ],
     unoptimized: process.env.NODE_ENV === 'development', // Optional: disable optimization in dev
