@@ -2,6 +2,39 @@
   max-width: 150px;
 }
 
+.heroMobile,
+.heroDesktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.heroMobile {
+  display: block;
+  min-height: 250px;
+}
+
+.heroDesktop {
+  display: none;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 600px) {
+  .heroMobile {
+    display: none;
+  }
+  
+  .heroDesktop {
+    display: block;
+    /* min-height: 100%; */
+    width: 100%
+  }
+}
+
 .announcement {
   display: flex;
   flex-direction: column;

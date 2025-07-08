@@ -7,7 +7,9 @@ import styles from './base-apparel.module.css';
 import Logo from '../../public/images/base-apparel/logo.svg';
 import IconError from '../../public/images/base-apparel/icon-error.svg';
 import Arrow from '../../public/images/base-apparel/icon-arrow.svg';
-import desktopImage from '../../public/images/base-apparel/hero-desktop.jpg';
+
+import CloudinaryImage from '../components/CloudinaryImage';
+
 import BackBanner from '../components/BackBanner';
 import PersonalFooter from '../components/PersonalFooter';
 
@@ -19,17 +21,40 @@ function Header() {
   );
 }
 
-function Aside() {
+function Aside() { 
   return (
     <aside className={styles.hero}>
       <h1 className="sr-only">Landing page</h1>
-      <div style={{ position: 'relative', height: '600px', width: '100%' }}>
-        <Image
-          className={styles.heroImg}
-          src={desktopImage}
-          alt=""
-          aria-hidden="true"
+      {/* Mobile image */}
+      <div className={styles.heroMobile}>
+        <CloudinaryImage
+          publicId='frontend-mentor/hero-mobile_qf19s2'
+          alt=''
+          width={375}
+          height={250}
           fill
+          crop='fill'
+          quality='auto'
+          format='auto'
+          className={styles.heroImg}
+          sizes="100vw"
+          aria-hidden="true"
+        />
+      </div>
+      {/* Desktop image */}
+      <div className={styles.heroDesktop}>
+        <CloudinaryImage
+          publicId='frontend-mentor/hero-desktop_q1uqeu' 
+          alt=''
+          width={610}
+          height={800}
+          fill
+          crop='auto'
+          quality='auto'
+          format='auto'
+          className={styles.heroImg}
+          sizes="50vw"
+          aria-hidden="true"
         />
       </div>
     </aside>
