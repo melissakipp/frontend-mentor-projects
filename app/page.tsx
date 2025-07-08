@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
+
 import styles from './page.module.css';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiCode } from 'react-icons/hi';
+import CloudinaryImage from './components/CloudinaryImage';
+
 interface Project {
   id: string;
   title: string;
@@ -16,42 +18,42 @@ const projects: Project[] = [
     id: 'base-apparel',
     title: 'Base Apparel',
     description: 'Coming soon page with email validation',
-    image: '/images/base-apparel/base-apparel-preview.png',
+    image: 'frontend-mentor/base-apparel-preview_dvctjf',
     path: '/base-apparel'
   },
   {
     id: 'product-preview-card',
     title: 'Product Preview Card',
     description: 'Responsive product card component',
-    image: '/images/product-preview/screenshot_desktop.png',
+    image: 'frontend-mentor/screenshot_desktop_ykzlep',
     path: '/product-preview-card'
   },
   {
     id: 'ratings-card',
     title: 'Interactive Rating Component',
     description: 'User feedback component with rating selection',
-    image: '/images/ratings-card/rating-card-preview.png',
+    image: 'frontend-mentor/rating-card-preview_xurakh',
     path: '/ratings-card'
   },
   {
     id: 'dropdown-nav',
     title: 'Intro section with dropdown navigation',
     description: 'Responsive with accessible dropdown and frontend interaction testing',
-    image: '/images/dropdown-nav/dropdown-nav-preview.png',
+    image: 'frontend-mentor/dropdown-nav-preview_mzec5i',
     path: '/dropdown-nav'
   },
   {
     id: 'officelite',
     title: 'Officelite coming soon site',
     description: 'Build a responsive 2-page coming soon website with form validation, countdown timer, and custom form controls.',
-    image: '/images/officelite/officelite-preview.png',
+    image: 'frontend-mentor/officelite-preview_qljaju',
     path: '/officelite'
   },
   {
     id: 'devfinder',
     title: 'DevFinder',
     description: 'Build a responsive GitHub user search application with light and dark themes.',
-    image: '/under-construction_ChatGPT-Image.png',
+    image: 'frontend-mentor/github-search-preview_gwjnuk',
     path: '/devfinder'
   }
 ];
@@ -75,13 +77,15 @@ export default function Home() {
           {projects.map((project) => (
             <Link href={project.path} key={project.id} className={styles.projectCard}>
               <div className={styles.imageContainer}>
-                <Image
-                  src={project.image}
+                <CloudinaryImage
+                  publicId={project.image}
                   alt={`Preview of ${project.title}`}
-                  width={300}
-                  height={200}
+                  width={250}
+                  height={175}
+                  crop='fill'
+                  quality='auto'
+                  format='auto'
                   className={styles.cardImage}
-                  priority={true}
                 />
               </div>
               <div className={styles.cardContent}>
@@ -101,13 +105,13 @@ export default function Home() {
           </div>
           
           <div className={styles.footerSocial}>
-            <a href="https://github.com/melissakipp" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href='https://github.com/melissakipp' target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
               <FaGithub className={styles.socialIcon} />
             </a>
-            <a href="https://linkedin.com/in/melissajkipp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href='https://linkedin.com/in/melissajkipp' target='_blank' rel='noopener noreferrer' aria-label='LinkedIn'>
               <FaLinkedin className={styles.socialIcon} />
             </a>
-            <a href="https://twitter.com/_melissakipp" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href='https://twitter.com/_melissakipp' target='_blank' rel='noopener noreferrer' aria-label='Twitter'>
               <FaTwitter className={styles.socialIcon} />
             </a>
           </div>
