@@ -1,6 +1,8 @@
 'use client';
+
 import BackBanner from '../components/BackBanner';
 import PersonalFooter from '../components/PersonalFooter';
+
 import styles from './page.module.css';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
@@ -10,15 +12,15 @@ export default function page() {
     <>
     <BackBanner />
     <div className={styles.container}>
-      <div className="container">
+      <div className='container'>
         <Header />
         <MainContent />
       </div>
     </div>
     <PersonalFooter
-      mySolution="https://frontend-mentor-projects-rho.vercel.app/"
-      projectNotes="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/notes.md"
-      projectReadme="https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/README.md"
+      mySolution='https://frontend-mentor-projects-rho.vercel.app/'
+      projectNotes='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/notes.md'
+      projectReadme='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/dropdown-nav/README.md'
     />
     </>
   );
