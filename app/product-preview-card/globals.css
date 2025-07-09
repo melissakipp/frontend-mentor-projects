@@ -1,0 +1,27 @@
+:root {
+  --deep-aquamarine: hsl(158, 36%, 37%);
+  --secondary-color: hsl(30, 38%, 92%);
+  --tertiary-color: hsl(228, 12%, 48%);
+  --black: hsl(212, 21%, 14%);
+  --pure-white: hsl(0, 0%, 100%);
+  
+  /* Updated font variables to use Next.js fonts */
+  --primary-font: var(--font-montserrat);
+  --secondary-font: var(--font-fraunces);
+  
+  --font-optical: auto;
+  --font-size: 0.875rem;
+  --lg-font-size: 2.285rem;
+  --sm-font-size: 12px;
+  --title-font-size: 2em;
+  --primary-font-style: normal;
+  --base-font-weight: 500;
+  --bold-font-weight: 700;
+  --base-line-height: 1.5;
+  --letter-spacing: 0.357em;
+  --border-radius: 10px;
+  --xs-spacing: 0.857rem;
+  --base-spacing: 1rem;
+  --md-spacing: 1.428rem;
+  --lg-spacing: 2rem;
+}

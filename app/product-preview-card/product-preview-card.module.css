@@ -1,33 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/* Variables */
-:root {
-  --deep-aquamarine: hsl(158, 36%, 37%);
-  --secondary-color: hsl(30, 38%, 92%);
-  --tertiary-color: hsl(228, 12%, 48%);
-  --black: hsl(212, 21%, 14%);
-  --pure-white: hsl(0, 0%, 100%);
-  --primary-font: "Montserrat", sans-serif;
-  --secondary-font: "Fraunces", serif;
-  --font-optical: auto;
-  --font-size: 0.875rem;
-  --lg-font-size: 2.285rem;
-  --sm-font-size: 12px;
-  --title-font-size: 2em;
-  --primary-font-style: normal;
-  --base-font-weight: 500;
-  --bold-font-weight: 700;
-  --base-line-height: 1.5;
-  --letter-spacing: 0.357em;
-  --border-radius: 10px;
-  --xs-spacing: 0.857rem;
-  --base-spacing: 1rem;
-  --md-spacing: 1.428rem;
-  --lg-spacing: 2rem;
-}
-
 /* Accessibility */
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -38,65 +10,99 @@
   border: 0;
 }
 
-.main__content {
+.mainContent {
   background-color: var(--secondary-color);
   display: grid;
   place-content: center;
   min-height: 100%;
+  font-family: var(--primary-font); /* Montserrat */
 }
 
 .product {
   background-color: var(--pure-white);
   border-radius: var(--border-radius);
   max-width: 90vw;
+  font-family: var(--primary-font); /* Montserrat */
+  margin: 4rem auto;
+}
+
+.productImgContainer {
+  margin: 0;
+}
+
+.productImg {
+  position: relative;
+}
+
+.productImgMobile {
+  display: block;
+}
+
+.productImgDesktop {
+  display: none;
 }
 
 .img {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  width: 100%;
+  height: auto;
 }
 
-.product__content {
+.productContent {
   padding: var(--lg-spacing);
 }
 
-.product__category {
+.productCategory {
+  font-family: var(--primary-font); /* Montserrat */
   font-size: var(--sm-font-size);
   font-weight: var(--base-font-weight);
   letter-spacing: 5px;
   text-transform: uppercase;
+  margin: 0;
+  color: var(--tertiary-color);
 }
 
-.product__title {
+.productTitle {
+  font-family: var(--secondary-font); /* Fraunces */
   color: var(--black);
-  font-family: var(--secondary-font);
   font-size: var(--lg-font-size);
+  font-weight: var(--bold-font-weight);
   line-height: 32px;
   margin: var(--base-spacing) 0;
 }
 
-.product__description {
+.productDescription {
+  font-family: var(--primary-font); /* Montserrat */
   line-height: 23px;
+  color: var(--tertiary-color);
+  margin: 0;
+  font-weight: 400;
 }
 
-.product__pricing {
+.productPricing {
   display: flex;
   align-items: center;
   gap: 1.357rem;
-  margin: var(--md-spacing) 0 ;
+  margin: var(--md-spacing) 0;
 }
 
-.product__final {
+.productFinal {
+  font-family: var(--secondary-font); /* Fraunces */
   color: var(--deep-aquamarine);
-  font-family: var(--secondary-font);
   font-size: var(--lg-font-size);
   font-weight: var(--bold-font-weight);
+  margin: 0;
 }
 
-.product__original {
+.productOriginal {
+  font-family: var(--primary-font); /* Montserrat */
   text-decoration: line-through;
+  color: var(--tertiary-color);
+  margin: 0;
+  font-weight: 400;
 }
 
-.product__btn {
+.productBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,35 +111,49 @@
   border-radius: var(--border-radius);
   color: var(--pure-white);
   cursor: pointer;
+  font-family: var(--primary-font); /* Montserrat */
   font-size: var(--font-size);
   font-weight: var(--bold-font-weight);
   line-height: normal;
   padding: 1rem 2rem;
-  max-width: 100%; /* Prevent overflow */
-  width: auto; 
-  overflow: hidden; 
-  white-space: nowrap; 
-  text-overflow: ellipsis; 
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s ease;
 }
 
-.product__btn-icon {
+.productBtn:hover {
+  background-color: hsl(158, 36%, 25%);
+}
+
+.productBtnIcon {
   margin: 0 var(--xs-spacing) 0 0;
-  width: var(--sm-font-size);
+  width: 15px;
+  height: auto;
 }
 
+/* Desktop styles */
 @media screen and (min-width: 600px) {
   .product {
     max-width: 600px;
-  }
-
-  .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .productImgMobile {
+    display: none;
+  }
+
+  .productImgDesktop {
+    display: block;
   }
 
   .img {
     border-radius: var(--border-radius) 0 0 var(--border-radius);
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
