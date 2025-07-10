@@ -1,25 +1,16 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Montserrat, Fraunces } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 
 // Primary font - Montserrat
-export const montserrat = Montserrat({
+const montserrat = Montserrat({ 
   subsets: ['latin'],
   weight: ['400', '500', '700'], // Normal, Medium, Bold weights used in the design
   style: ['normal'],
   display: 'swap',
   variable: '--font-montserrat', // CSS variable for the font
-})
-
-// Secondary font - Fraunces (for headings)
-export const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['700'], // Bold weight for product titles
-  style: ['normal'],
-  display: 'swap',
-  variable: '--font-fraunces', // CSS variable for the font
-})
+});
 
 interface LayoutProps {
   children: ReactNode;
@@ -73,7 +64,6 @@ export const metadata: Metadata = {
 export default function OfficeliteLayout({ children }: LayoutProps) {
   return (
     <div className={montserrat.className}>
-
       {children}
     </div>
   );
