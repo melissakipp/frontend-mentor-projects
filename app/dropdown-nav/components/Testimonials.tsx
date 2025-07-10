@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import styles from './Testimonials.module.css';
+import styles from './Testmonials.module.css';
 import AudiophileLogo from '@/../public/images/dropdown-nav/client-audiophile.svg';
 import DatabizLogo from '@/../public/images/dropdown-nav/client-databiz.svg';
 import MakerLogo from '@/../public/images/dropdown-nav/client-maker.svg';
