@@ -8,6 +8,9 @@ import styles from './styles/page.module.css';
 
 import { fetchGitHubUser } from './lib/fetchGitHubUser';
 
+import BackBanner from '../components/BackBanner';
+import PersonalFooter from '../components/PersonalFooter';
+
 export default function GitHubUserSearchPage() {
   const [username, setUsername] = useState('octocat'); // Default user
   const [userData, setUserData] = useState(null);
@@ -26,7 +29,7 @@ export default function GitHubUserSearchPage() {
         const user = await fetchGitHubUser(username);
         setUserData(user);
       } catch (err) {
-        setError(`User "${username}" not found.`);
+        setError(`User '${username}' not found.`);
         setUserData(null);
       } finally {
         setLoading(false);
@@ -40,11 +43,17 @@ export default function GitHubUserSearchPage() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
+        <BackBanner />
         <Header />
         <SearchBar onSearch={handleSearch} />
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {userData && <Card user={userData} />}
+        <PersonalFooter
+          mySolution='https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/devfinder'
+          projectNotes='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/notes.md'
+          projectReadme='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/README.md'
+        />
       </div>
     </main>
   );
