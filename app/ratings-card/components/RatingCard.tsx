@@ -4,6 +4,7 @@ import React, { useState, useRef, FormEvent, useEffect } from 'react';
 import styles from './RatingCard.module.css';
 import { Rating, RatingCardProps } from './types';
 import Image from 'next/image';
+import CloudinaryImage from '../../components/CloudinaryImage';
 
 /**
  * Interactive Rating Component
@@ -130,10 +131,16 @@ export default function RatingCard({
         </form>
       ) : (
         <section className={styles.thank_you}>
-          <Image
-            src='/images/ratings-card/illustration-thank-you.svg' 
-            alt='Thank you illustration' 
+          <CloudinaryImage
+            publicId='frontend-mentor/illustration-thank-you_uzosbg'
+            alt='Thank you illustration'
+            width={100}
+            height={75}
+            crop='fit'
+            quality='auto'
+            format='auto'
             className={styles.thank_you__image} 
+            priority={true}
           />
           <p className={styles.thank_you__rating}>
             You selected {selectedRating} out of 5
