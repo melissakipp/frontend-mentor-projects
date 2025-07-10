@@ -5,7 +5,7 @@
 .main {
   box-sizing: border-box;
   padding-bottom: 2rem;
-  padding: 1rem;
+  padding: 1rem; 
   width: 100%;
 }
 
@@ -19,7 +19,6 @@
 .heroImg {
   width: 100%;
   height: auto;
-  display: block;
 } 
 
 .pageText__title {
@@ -77,6 +76,8 @@
   
   .desktopOnly {
     display: block;
+    width: 100%;
+    height: auto;
   }
   
   .main {
@@ -100,11 +101,11 @@
     max-width: 100%;
   }
 
-  .heroImg {
+  /* .heroImg {
     max-height: 80vh;
     object-fit: contain;
     overflow: hidden;
-  }
+  } */
 
   .pageText__title {
     font-size: 5rem;

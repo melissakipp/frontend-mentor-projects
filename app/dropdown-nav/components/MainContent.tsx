@@ -1,10 +1,8 @@
-import Image from 'next/image';
+import CloudinaryImage from '../../components/CloudinaryImage';
 
 import styles from './MainContent.module.css';
-import Testmonials from './Testmonials';
+import Testimonials from './Testimonials';
 
-import mobileHero from '../../../public/images/dropdown-nav/image-hero-mobile.png';
-import desktopHero from '../../../public/images/dropdown-nav/image-hero-desktop.png';
 
 export default function MainContent() {
   return (
@@ -13,20 +11,32 @@ export default function MainContent() {
         <div className={styles.imageWrapper}>
           {/* Hide on desktop */}
           <div className={styles.mobileOnly}>
-            <Image
-              className={styles.heroImg}
-              src={mobileHero}
+            <CloudinaryImage
+              publicId='frontend-mentor/image-hero-mobile_i2u6ed'
               alt='Illustration'
+              width={375}
+              height={250}
+              crop='fill'
+              quality='auto'
+              format='auto'
+              className={styles.heroImg}
+              sizes='(max-width: 768px) 100vw, 0px'
               priority={true}
             />
           </div>
           
           {/* Hide on mobile */}
           <div className={styles.desktopOnly}>
-            <Image
-              className={styles.heroImg}
-              src={desktopHero}
+            <CloudinaryImage
+              publicId='frontend-mentor/image-hero-desktop_wtrdot'
               alt='Illustration'
+              width={600}
+              height={400}
+              crop='fit'
+              quality='auto'
+              format='auto'
+              className={styles.heroImg}
+              sizes='(min-width: 769px) 50vw, 0px'
               priority={true}
             />
           </div>
@@ -43,7 +53,7 @@ export default function MainContent() {
           <a className={styles.btn} href=''>Learn more</a>
         </div>
       </section>
-      <Testmonials />
+      <Testimonials />
     </main>
   );
 }
