@@ -41,20 +41,23 @@ export default function GitHubUserSearchPage() {
   }, [username]);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <BackBanner />
-        <Header />
-        <SearchBar onSearch={handleSearch} />
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
-        {userData && <Card user={userData} />}
-        <PersonalFooter
-          mySolution='https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/devfinder'
-          projectNotes='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/notes.md'
-          projectReadme='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/README.md'
-        />
-      </div>
-    </main>
+    <>
+      <BackBanner />
+      <main className={styles.main}>
+        <div className={styles.container}>
+          
+          <Header />
+          <SearchBar onSearch={handleSearch} />
+          {loading && <p>Loading...</p>}
+          {error && <p>{error}</p>}
+          {userData && <Card user={userData} />}
+        </div>
+      </main>
+      <PersonalFooter
+        mySolution='https://github.com/melissakipp/frontend-mentor-projects/tree/main/app/devfinder'
+        projectNotes='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/notes.md'
+        projectReadme='https://github.com/melissakipp/frontend-mentor-projects/blob/main/app/devfinder/README.md'
+      />
+    </>
   );
 }
