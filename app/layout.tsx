@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { Overpass } from 'next/font/google';
-import "./globals.css";
+import { Overpass } from "next/font/google";
+import "./global.css";
+
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Load and configure the Overpass font
 const overpass = Overpass({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -39,8 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={overpass.className}>{children}</body>
-    </html>
+    <>
+      <html lang="en">
+        <body className={overpass.className}>{children}</body>
+      </html>
+      <Analytics />
+      <SpeedInsights />
+    </>
   );
 }
